@@ -20,7 +20,8 @@ public class DataManagement {
 		return storage.getRoom(id);
 	}
 	public Rooms getPlayerRoom() {
-		return storage.getRoom(player.getPlayerLocation());
+		System.out.println(player.getPlayerLocation());
+		return storage.getRoom(1);
 	}
 	
 	public void movePlayerNorth() {

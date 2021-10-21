@@ -23,7 +23,7 @@ public class Storage {
 	}
 	
 	public void loadFile() {
-		map = loader.loadFile();
+		setMap(loader.loadFile());
 	}
 	
 	@Override

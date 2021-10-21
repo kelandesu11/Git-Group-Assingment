@@ -10,21 +10,15 @@ public class Controller {
 		
 		System.out.println(model.toString());
 		
-		for(int i = 0; i < 100; i ++) {
-			System.out.println(model.prompt());
-			scan.hasNext();
-			if(scan.equals("North")) {
+		for(System.out.println(model.prompt()); scan.hasNext(); System.out.println(model.prompt())) {
+			
+			String input = scan.nextLine().replaceAll("\n", "").toLowerCase();
+			int[] conn = model.getConnections();
+			
+			if (input.length() == 0)
+				continue;
+			else if(input.equals("n") || input.equals("north") && conn[0] != -1)
 				model.movePlayerNorth();
-			}
-			else if(scan.equals("East")) {
-				model.movePlayerEast();
-			}
-			else if(scan.equals("South")) {
-				model.movePlayerSouth();
-			}
-			else if(scan.equals("West")) {
-				model.movePlayerWest();
-			}
 			
 		}
 	}

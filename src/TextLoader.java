@@ -56,20 +56,6 @@ public class TextLoader {
 	private HashMap<Integer, Rooms> readFile() {
 		HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
 		
-
-			while (scanfile.hasNext()) {
-				Rooms temp = new Rooms();
-				temp.setRoomID(scanfile.nextInt());
-				scanfile.nextLine();
-				temp.setRoomName(scanfile.nextLine());
-				temp.setRoomDesc(scanfile.nextLine());
-				temp.setNorth(scanfile.nextInt());
-				temp.setEast(scanfile.nextInt());
-				temp.setSouth(scanfile.nextInt());
-				temp.setWest(scanfile.nextInt());
-				map.put(temp.getRoomID(), temp);
-				map.get(1).setVisitedRoom(true);
-
 		while(scanfile.hasNext()) {
 			Rooms temp = new Rooms();
 			temp.setRoomID(scanfile.nextInt());
@@ -87,5 +73,5 @@ public class TextLoader {
 			return map;
 	}
 
-	}
+	
 }
