@@ -6,16 +6,14 @@
 
 public class DataManagement {
 	
-	private TextLoader loader = new TextLoader();
 	private Storage storage = new Storage();
 	private Player player = new Player();
 	
 	public DataManagement() {
-		newGame();
 	}
 	
 	public void newGame() {
-		storage.setMap(loader.loadFile());
+		storage.loadFile();
 	}
 	
 	public Rooms getRoom(int id) {
@@ -23,6 +21,34 @@ public class DataManagement {
 	}
 	public Rooms getPlayerRoom() {
 		return storage.getRoom(player.getPlayerLocation());
+	}
+	
+	public void movePlayerNorth() {
+		if (getPlayerRoom().getNorth() != -1)
+			player.setPlayerLocation(getPlayerRoom().getNorth());
+		else
+			System.out.println("Ouch! You walk into a wall!");
+	}
+	
+	public void movePlayerSouth() {
+		if (getPlayerRoom().getSouth() != -1)
+			player.setPlayerLocation(getPlayerRoom().getSouth());
+		else
+			System.out.println("Ouch! You walk into a wall!");
+	}
+	
+	public void movePlayerEast() {
+		if (getPlayerRoom().getEast() != -1)
+			player.setPlayerLocation(getPlayerRoom().getEast());
+		else
+			System.out.println("Ouch! You walk into a wall!");
+	}
+	
+	public void movePlayerWest() {
+		if (getPlayerRoom().getWest() != -1)
+			player.setPlayerLocation(getPlayerRoom().getWest());
+		else
+			System.out.println("Ouch! You walk into a wall!");
 	}
 	
 	/*
@@ -55,6 +81,15 @@ public class DataManagement {
 			links += "and West.";
 		
 		return links;
+	}
+	
+	public String prompt() {
+		return getConnectionsString();
+	}
+	
+	@Override
+	public String toString() {
+		return "Player room is " + player.getPlayerLocation() + "\n" + storage.toString();
 	}
 	
 }

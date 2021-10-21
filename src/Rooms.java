@@ -1,14 +1,14 @@
 public class Rooms {
+	private int roomID = -1;
 	private String roomName = "Empty";
 	private String roomDesc = "This is an empty Rooms class";
-	private int roomID = -1;
 	private int north = -1;
 	private int east = -1;
 	private int south = -1;
 	private int west = -1;
 	private boolean visitedRoom = false;
 	
-	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west, boolean visitedRoom) {
+	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west) {
 		this.roomID = roomID;
 		this.roomName = roomName;
 		this.roomDesc = roomDesc;
@@ -16,9 +16,8 @@ public class Rooms {
 		this.south = south;
 		this.east = east;
 		this.west = west;
-		this.visitedRoom = false;
-		
 	}
+	
 	public Rooms() {
 		
 	}
@@ -85,5 +84,10 @@ public class Rooms {
 	
 	public void setVisitedRoom(boolean visitedRoom) {
 		this.visitedRoom = visitedRoom;
+	}
+	
+	@Override
+	public String toString() {
+		return " " + getRoomID() + " " + getRoomName();
 	}
 }
