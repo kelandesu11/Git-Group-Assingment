@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class TextLoader {
 	
 
-	HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
 	private Scanner scanin = new Scanner(System.in);
 	private Scanner scanfile;
 	private File file;
@@ -55,20 +54,21 @@ public class TextLoader {
 	 * West connection
 	 */
 	private HashMap<Integer, Rooms> readFile() {
+		HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
+		Rooms temp = new Rooms();
 		
-			while (scanfile.hasNext()) {
-				Rooms temp = new Rooms();
-				temp.setRoomID(scanin.nextInt());
-				scanin.nextLine();
-				temp.setRoomName(scanin.nextLine());
-				temp.setRoomDesc(scanin.nextLine());
-				temp.setNorth(scanin.nextInt());
-				temp.setSouth(scanin.nextInt());
-				temp.setEast(scanin.nextInt());
-				temp.setWest(scanin.nextInt());
-				System.out.println(temp.toString());
-				map.put(temp.getRoomID(), temp);
+		while(scanfile.hasNext()) {
+			temp.setRoomID(scanfile.nextInt());
+			scanfile.nextLine();
+			temp.setRoomName(scanfile.nextLine().replaceAll("\n", ""));
+			temp.setRoomDesc(scanfile.nextLine().replaceAll("\n", ""));
+			temp.setNorth(scanfile.nextInt());
+			temp.setSouth(scanfile.nextInt());
+			temp.setEast(scanfile.nextInt());
+			temp.setWest(scanfile.nextInt());
+			map.put(temp.getRoomID(), temp);
 		}
+		map.get(1).setVisitedRoom(true);
 			return map;
 	}
 
