@@ -1,6 +1,6 @@
 
 public class Player {
-	private int roomID;
+	private int roomID = 1;
 	
 	public int getPlayerLocation() {
 		return roomID;

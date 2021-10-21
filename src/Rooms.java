@@ -88,6 +88,6 @@ public class Rooms {
 	
 	@Override
 	public String toString() {
-		return " " + getRoomID() + " " + getRoomName();
+		return getRoomID() + " " + getRoomName() + "\n" + getRoomDesc();
 	}
 }

@@ -8,23 +8,22 @@ public class Controller {
 		
 		model.newGame();
 		
-		System.out.println(model.toString());
-		
-		for(int i = 0; i < 100; i ++) {
-			System.out.println(model.prompt());
-			scan.hasNext();
-			if(scan.equals("North")) {
+		for (System.out.println(model.getPlayerRoom().toString()), model.prompt(); scan.hasNextLine(); model.prompt()) {
+			
+			String input = scan.nextLine().replaceAll("\n", "").toLowerCase();
+			
+			if (input.length() == 0)
+				continue;
+			else if (input.equals("n") || input.equals("north"))
 				model.movePlayerNorth();
-			}
-			else if(scan.equals("East")) {
-				model.movePlayerEast();
-			}
-			else if(scan.equals("South")) {
+			else if (input.equals("s") || input.equals("south"))
 				model.movePlayerSouth();
-			}
-			else if(scan.equals("West")) {
-				model.movePlayerWest();
-			}
+			else if (input.equals("e") || input.equals("east"))
+				model.movePlayerEast();
+			else if (input.equals("w") || input.equals("west"))
+				model.movePlayerWest(); 
+			else if (input.equals("x") || input.equals("exit"))
+				System.exit(0);
 			
 		}
 	}
