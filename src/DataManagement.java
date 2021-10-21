@@ -23,6 +23,22 @@ public class DataManagement {
 		return storage.getRoom(player.getPlayerLocation());
 	}
 	
+	public void movePlayerNorth() {
+		player.setPlayerLocation(getPlayerRoom().getNorth());
+	}
+	
+	public void movePlayerSouth() {
+		player.setPlayerLocation(getPlayerRoom().getSouth());
+	}
+	
+	public void movePlayerEast() {
+		player.setPlayerLocation(getPlayerRoom().getEast());
+	}
+	
+	public void movePlayerWest() {
+		player.setPlayerLocation(getPlayerRoom().getWest());
+	}
+	
 	/*
 	 * This method returns an integer array of connections -1 is no connection.
 	 * The order of connections is North, South, East, West.
