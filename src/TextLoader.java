@@ -49,8 +49,8 @@ public class TextLoader {
 	 * Name
 	 * Description
 	 * North connection
-	 * South connection
 	 * East connection
+	 * South connection
 	 * West connection
 	 */
 	private HashMap<Integer, Rooms> readFile() {
@@ -63,8 +63,8 @@ public class TextLoader {
 				temp.setRoomName(scanfile.nextLine());
 				temp.setRoomDesc(scanfile.nextLine());
 				temp.setNorth(scanfile.nextInt());
-				temp.setSouth(scanfile.nextInt());
 				temp.setEast(scanfile.nextInt());
+				temp.setSouth(scanfile.nextInt());
 				temp.setWest(scanfile.nextInt());
 				map.put(temp.getRoomID(), temp);
 				map.get(1).setVisitedRoom(true);
