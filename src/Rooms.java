@@ -85,4 +85,9 @@ public class Rooms {
 	public void setVisitedRoom(boolean visitedRoom) {
 		this.visitedRoom = visitedRoom;
 	}
+	
+	@Override
+	public String toString() {
+		return " " + getRoomID() + " " + getRoomName();
+	}
 }
