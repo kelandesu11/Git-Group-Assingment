@@ -29,7 +29,7 @@ public class DataManagement {
 	 * This method returns an integer array of connections -1 is no connection.
 	 * The order of connections is North, East, South, West.
 	 */
-	private int[] getConnections() {
+	public int[] getConnections() {
 		int[] connections = {-1, -1, -1, -1};
 		connections[0] = getPlayerRoom().getNorth();
 		connections[1] = getPlayerRoom().getEast();
