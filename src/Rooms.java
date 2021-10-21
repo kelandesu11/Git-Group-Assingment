@@ -14,6 +14,9 @@ public class Rooms {
 		this.visitedRoom = false;
 		
 	}
+	public Rooms() {
+		
+	}
 	
 	public int getRoomID() {
 		return roomID;
