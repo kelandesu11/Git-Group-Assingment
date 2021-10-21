@@ -1,9 +1,9 @@
 public class Rooms {
-	private String roomName, roomDesc, north, south, east, west;
-	private int roomID;
+	private String roomName, roomDesc;
+	private int roomID, north, east, south, west;
 	private boolean visitedRoom;
 	
-	public Rooms(int roomID, String roomName, String roomDesc, String north, String east, String south, String west, boolean visitedRoom) {
+	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west, boolean visitedRoom) {
 		this.roomID = roomID;
 		this.roomName = roomName;
 		this.roomDesc = roomDesc;
@@ -39,35 +39,35 @@ public class Rooms {
 		this.roomDesc = roomDesc;
 	}
 	
-	public String getNorth() {
+	public int getNorth() {
 		return north;
 	}
 	
-	public void setNorth(String north) {
+	public void setNorth(int north) {
 		this.north = north;
 	}
 	
-	public String getSouth() {
+	public int getSouth() {
 		return south;
 	}
 	
-	public void setSouth(String south) {
+	public void setSouth(int south) {
 		this.south = south;
 	}
 	
-	public String getEast() {
+	public int getEast() {
 		return east;
 	}
 	
-	public void setEast(String east) {
+	public void setEast(int east) {
 		this.east = east;
 	}
 	
-	public String getWest() {
+	public int getWest() {
 		return west;
 	}
 	
-	public void setWest(String west) {
+	public void setWest(int west) {
 		this.west = west;
 	}
 	
