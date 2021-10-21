@@ -1,159 +1,47 @@
 1
 The Entrance
 You are inside the fence , near the side of the pool, to your left is the big metal gate of the palace.
-0
 2
-6
-0
+-1
+-1
+-1
 
 2
 The Living Room
 You just entered the living room ,a huge room with an oversized TV and many paintings hanging on the wall. You see a comfy leather couch, but this aint no time to rest.
-0
 3
-7
 1
+3
+-1
 
 3
 Downstairs Bathroom
 This is the downstairs bathroom, all white tile, it looks suspiciously clean, except for some footprint on the floor.
-0
+-1
+-1
 4
-8
 2
 
 4
 The Study
 You’ve made it to the study room, Books and papers scattered everywhere, the radio still playing some music you don't recognize.
-0
+6
 5
-9
+-1
 3
 
 5
 The Master Bedroom
 A dark spacious room with all the lamps broken, must be the master bedroom, ,the window is wide open and blowing cold air into the room. You turn around and see your reflection on the wall mirror.
-0
-0
-10
 4
+-1
+-1
+-1
 
 6
 The Narrow Room
 This space, barely wider than a bed, could make anyone feel claustrophobic, the wall is made out of unfinished stone.
-1
-7
-11
-0
-
-7
-The Hallway
-A long windowless hallway, to the east is stairs, to the west the hallway narrows.
-2
-8
-12
-6
-
-8
-The Grassland
-This is an open field north of the palace.
-3
-9
-13
-7
-
-9
-The Upstairs Bathroom
-Upstairs bathroom, you see hair products and brushes everywhere, the princess must’ve been here.
+-1
 4
-10
-14
-8
-
-10
-The Kitchen
-You found the kitchen.
-5
-0
-15
-9
-
-11
-The Great Hallway
-This is the great hallway, with a long red carpet on the floor and fancy huge lights on the ceiling.
-6
-12
-16
-0
-
-12
-The Basement
-A basement/storage, quite messy and dark, be careful.
-7
-13
-17
-11
-
-13
-The Movie Room
-A home theater, with an old school film projector.
-8
-14
-18
-12
-
-14
-The Princess's Bedroom
-Princess’s bedroom, a white canopy around the bed, an oversized curtain covering the windows.
-9
-15
-19
-13
-
-15
-The Bathroom
-Another bathroom
-10
-0
-0
-14
-
-16
-The Gymnasium
-This is the home gym
-11
-17
-0
-0
-
-17
-The Balcony
-The rooftop, a pool and jacuzzi included.
-12
-18
-0
-16
-
-18
-The Guest Bedroom
-The guest bedroom
-13
-19
-0
-17
-
-19
-The Garage
-The garage, with a classic Corvette and Porsche 911 parked inside.
-14
-20
-0
-18
-
-20
-The Loft
-This is the attic, where the Princess has been hiding from the Monsters.
-15
-0
-0
-19
+-1
+-1

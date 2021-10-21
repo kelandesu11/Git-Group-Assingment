@@ -21,12 +21,14 @@ public class DataManagement {
 	}
 	public Rooms getPlayerRoom() {
 		System.out.println(player.getPlayerLocation());
-		return storage.getRoom(1);
+		return storage.getRoom(player.getPlayerLocation());
 	}
 	
 	public void movePlayerNorth() {
-		if (getPlayerRoom().getNorth() != -1)
-			player.setPlayerLocation(getPlayerRoom().getNorth());
+		if (getPlayerRoom().getNorth() != -1) {
+			player.setPlayerLocation(getRoom(player.getPlayerLocation()).getNorth());
+			System.out.println(getPlayerRoom().toString());
+		}
 		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
@@ -79,13 +81,14 @@ public class DataManagement {
 		if (connections[2] != -1)
 			links += "East, ";
 		if (connections[3] != -1)
-			links += "and West.";
+			links += "West.";
+		links += " Exit with \"x\" or \"exit\"";
 		
 		return links;
 	}
 	
-	public String prompt() {
-		return getConnectionsString();
+	public void prompt() {
+		System.out.println(getConnectionsString());
 	}
 	
 	@Override

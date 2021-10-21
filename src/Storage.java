@@ -10,6 +10,7 @@ public class Storage {
 	private TextLoader loader = new TextLoader();
 	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
 	
+	
 	public void setMap(HashMap<Integer, Rooms> map) {
 		this.map = map;
 	}
