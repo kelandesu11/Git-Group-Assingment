@@ -29,7 +29,7 @@ public class DataManagement {
 	 * This method returns an integer array of connections -1 is no connection.
 	 * The order of connections is North, East, South, West.
 	 */
-	public int[] getConnections() {
+	private int[] getConnections() {
 		int[] connections = {-1, -1, -1, -1};
 		connections[0] = getPlayerRoom().getNorth();
 		connections[1] = getPlayerRoom().getEast();
@@ -38,5 +38,23 @@ public class DataManagement {
 		return connections;
 	}
 	
+	/*
+	 * Returns a list of avaliable connections.
+	 */
+	private String getConnectionsString() {
+		int[] connections = getConnections();
+		String links = "Your movement options are: ";
+		
+		if (connections[0] != -1)
+			links += "North, ";
+		if (connections[1] != -1)
+			links += "South, ";
+		if (connections[2] != -1)
+			links += "East, ";
+		if (connections[3] != -1)
+			links += "and West.";
+		
+		return links;
+	}
 	
 }
