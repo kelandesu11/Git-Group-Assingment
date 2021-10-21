@@ -11,11 +11,10 @@ public class DataManagement {
 	private Player player = new Player();
 	
 	public DataManagement() {
-		newGame();
 	}
 	
 	public void newGame() {
-		storage.setMap(loader.loadFile());
+		loader.loadFile();
 	}
 	
 	public Rooms getRoom(int id) {
@@ -55,6 +54,15 @@ public class DataManagement {
 			links += "and West.";
 		
 		return links;
+	}
+	
+	public void prompt() {
+		getConnectionsString();
+	}
+	
+	@Override
+	public String toString() {
+		return "Player room is " + player.getPlayerLocation() + "\n" + storage.toString();
 	}
 	
 }

@@ -25,11 +25,12 @@ public class TextLoader {
 	 *The file path is used to create a file Object and Scanner for the file.
 	 */
 	public HashMap<Integer, Rooms> loadFile() {
+		
 		try {
-			file = new File("Rooms.txt");
+			file = new File("Room.txt");
 			scanfile = new Scanner(file);
 		} catch (FileNotFoundException e) {
-			System.out.println("Enter the Rooms.txt file path");
+			System.out.println("Enter the Room.txt file path");
 			try {
 				file = new File(scanin.nextLine());
 				scanfile = new Scanner(file);
@@ -38,8 +39,7 @@ public class TextLoader {
 				loadFile();
 			}
 		}
-		HashMap<Integer, Rooms> map = readFile();
-		return map;
+		return readFile();
 	}
 	
 	/*
@@ -53,22 +53,15 @@ public class TextLoader {
 	 * East connection
 	 * West connection
 	 */
-	private HashMap<Integer, Rooms> readFile() {
+	public HashMap<Integer, Rooms> readFile() {
 		HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
 		
 			while (scanfile.hasNext()) {
 				Rooms temp = new Rooms();
-				temp.setRoomID(scanfile.nextInt());
-				scanfile.nextLine();
-				temp.setRoomName(scanfile.nextLine());
-				temp.setRoomDesc(scanfile.nextLine());
-				temp.setNorth(scanfile.nextInt());
-				temp.setSouth(scanfile.nextInt());
-				temp.setEast(scanfile.nextInt());
-				temp.setWest(scanfile.nextInt());
-				map.put(temp.getRoomID(), temp);
-				map.get(1).setVisitedRoom(true);
+				System.out.println(scanfile.nextLine());
+				
 		}
+			System.out.println(map.toString());
 			map.get(1).setVisitedRoom(true);
 			return map;
 	}

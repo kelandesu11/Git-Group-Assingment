@@ -5,7 +5,6 @@ You are inside the fence , near the side of the pool, to your left is the big me
 2
 6
 0
-false
 2
 The Living Room
 You just entered the living room ,a huge room with an oversized TV and many paintings hanging on the wall. You see a comfy leather couch, but this aint no time to rest.
@@ -13,7 +12,6 @@ You just entered the living room ,a huge room with an oversized TV and many pain
 3
 7
 1
-false
 3
 Downstairs Bathroom
 This is the downstairs bathroom, all white tile, it looks suspiciously clean, except for some footprint on the floor.
@@ -21,7 +19,6 @@ This is the downstairs bathroom, all white tile, it looks suspiciously clean, ex
 4
 8
 2
-false
 4
 The Study
 You’ve made it to the study room, Books and papers scattered everywhere, the radio still playing some music you don't recognize.
@@ -29,7 +26,6 @@ You’ve made it to the study room, Books and papers scattered everywhere, the rad
 5
 9
 3
-false
 5
 The Master Bedroom
 A dark spacious room with all the lamps broken, must be the master bedroom, ,the window is wide open and blowing cold air into the room. You turn around and see your reflection on the wall mirror.
@@ -37,7 +33,6 @@ A dark spacious room with all the lamps broken, must be the master bedroom, ,the
 0
 10
 4
-false
 6
 The Narrow Room
 This space, barely wider than a bed, could make anyone feel claustrophobic, the wall is made out of unfinished stone.
@@ -45,7 +40,6 @@ This space, barely wider than a bed, could make anyone feel claustrophobic, the 
 7
 11
 0
-false
 7
 The Hallway
 A long windowless hallway, to the east is stairs, to the west the hallway narrows.
@@ -53,7 +47,6 @@ A long windowless hallway, to the east is stairs, to the west the hallway narrow
 8
 12
 6
-false
 8
 The Grassland
 This is an open field north of the palace.
@@ -61,7 +54,6 @@ This is an open field north of the palace.
 9
 13
 7
-false
 9
 The Upstairs Bathroom
 Upstairs bathroom, you see hair products and brushes everywhere, the princess must’ve been here.
@@ -69,7 +61,6 @@ Upstairs bathroom, you see hair products and brushes everywhere, the princess mu
 10
 14
 8
-false
 10
 The Kitchen
 You found the kitchen.
@@ -77,7 +68,6 @@ You found the kitchen.
 0
 15
 9
-false
 11
 The Great Hallway
 This is the great hallway, with a long red carpet on the floor and fancy huge lights on the ceiling.
@@ -85,7 +75,6 @@ This is the great hallway, with a long red carpet on the floor and fancy huge li
 12
 16
 0
-false
 12
 The Basement
 A basement/storage, quite messy and dark, be careful.
@@ -93,7 +82,6 @@ A basement/storage, quite messy and dark, be careful.
 13
 17
 11
-false
 13
 The Movie Room
 A home theater, with an old school film projector.
@@ -101,7 +89,6 @@ A home theater, with an old school film projector.
 14
 18
 12
-false
 14
 The Princess's Bedroom
 Princess’s bedroom, a white canopy around the bed, an oversized curtain covering the windows.
@@ -109,7 +96,6 @@ Princess’s bedroom, a white canopy around the bed, an oversized curtain covering
 15
 19
 13
-false
 15
 The Bathroom
 Another bathroom
@@ -117,7 +103,6 @@ Another bathroom
 0
 0
 14
-false
 16
 The Gymnasium
 This is the home gym
@@ -125,7 +110,6 @@ This is the home gym
 17
 0
 0
-false
 17
 The Balcony
 The rooftop, a pool and jacuzzi included.
@@ -133,7 +117,6 @@ The rooftop, a pool and jacuzzi included.
 18
 0
 16
-false
 18
 The Guest Bedroom
 The guest bedroom
@@ -141,7 +124,6 @@ The guest bedroom
 19
 0
 17
-false
 19
 The Garage
 The garage, with a classic Corvette and Porsche 911 parked inside.
@@ -149,7 +131,6 @@ The garage, with a classic Corvette and Porsche 911 parked inside.
 20
 0
 18
-false
 20
 The Loft
 This is the attic, where the Princess has been hiding from the Monsters.
@@ -157,7 +138,6 @@ This is the attic, where the Princess has been hiding from the Monsters.
 0
 0
 19
-false
 
 
 

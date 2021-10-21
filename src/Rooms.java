@@ -8,7 +8,7 @@ public class Rooms {
 	private int west = -1;
 	private boolean visitedRoom = false;
 	
-	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west, boolean visitedRoom) {
+	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west) {
 		this.roomID = roomID;
 		this.roomName = roomName;
 		this.roomDesc = roomDesc;
@@ -16,9 +16,8 @@ public class Rooms {
 		this.south = south;
 		this.east = east;
 		this.west = west;
-		this.visitedRoom = false;
-		
 	}
+	
 	public Rooms() {
 		
 	}

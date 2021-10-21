@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 public class Storage {
 	
+	private TextLoader loader = new TextLoader();
 	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
 	
 	public void setMap(HashMap<Integer, Rooms> map) {
@@ -19,6 +20,11 @@ public class Storage {
 	
 	public Rooms getRoom(int id) {
 		return map.get(id);
+	}
+	
+	@Override
+	public String toString() {
+		return map.toString();
 	}
 
 }
