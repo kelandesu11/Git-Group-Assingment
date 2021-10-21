@@ -6,7 +6,8 @@ import java.util.Scanner;
 /*
  * Author: Jeremy Stiff
  * Date: 9/18/21
- * The purpose of this class is to load room data from a text file into a hash map.
+ * The purpose of this class is to load room data from a text file into a hash map
+ * and pass it onto the Storage class.
  */
 public class TextLoader {
 	

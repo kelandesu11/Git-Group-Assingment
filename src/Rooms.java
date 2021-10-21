@@ -1,7 +1,12 @@
 public class Rooms {
-	private String roomName, roomDesc;
-	private int roomID, north, east, south, west;
-	private boolean visitedRoom;
+	private String roomName = "Empty";
+	private String roomDesc = "This is an empty Rooms class";
+	private int roomID = -1;
+	private int north = -1;
+	private int east = -1;
+	private int south = -1;
+	private int west = -1;
+	private boolean visitedRoom = false;
 	
 	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west, boolean visitedRoom) {
 		this.roomID = roomID;

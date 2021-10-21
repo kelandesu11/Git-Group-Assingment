@@ -1,5 +1,10 @@
 import java.util.HashMap;
 
+/*
+ * Author: Jeremy Stiff
+ * Description: This class stores the HashMap and will retrieve data when needed.
+ */
+
 public class Storage {
 	
 	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();

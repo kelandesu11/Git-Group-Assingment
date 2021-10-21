@@ -1,12 +1,12 @@
 
 public class Player {
-	private static int roomID;
+	private int roomID;
 	
-	public static int getPlayerLocation() {
+	public int getPlayerLocation() {
 		return roomID;
 	}
 	
-	public static void setPlayerLocation(int room) {
+	public void setPlayerLocation(int room) {
 		roomID = room;
 	}
 	
