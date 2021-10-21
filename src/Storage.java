@@ -22,6 +22,10 @@ public class Storage {
 		return map.get(id);
 	}
 	
+	public void loadFile() {
+		map = loader.loadFile();
+	}
+	
 	@Override
 	public String toString() {
 		return map.toString();

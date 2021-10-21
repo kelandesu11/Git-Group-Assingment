@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class TextLoader {
 	
 
+	HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
 	private Scanner scanin = new Scanner(System.in);
 	private Scanner scanfile;
 	private File file;
@@ -53,16 +54,21 @@ public class TextLoader {
 	 * East connection
 	 * West connection
 	 */
-	public HashMap<Integer, Rooms> readFile() {
-		HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
+	private HashMap<Integer, Rooms> readFile() {
 		
 			while (scanfile.hasNext()) {
 				Rooms temp = new Rooms();
-				System.out.println(scanfile.nextLine());
-				
+				temp.setRoomID(scanin.nextInt());
+				scanin.nextLine();
+				temp.setRoomName(scanin.nextLine());
+				temp.setRoomDesc(scanin.nextLine());
+				temp.setNorth(scanin.nextInt());
+				temp.setSouth(scanin.nextInt());
+				temp.setEast(scanin.nextInt());
+				temp.setWest(scanin.nextInt());
+				System.out.println(temp.toString());
+				map.put(temp.getRoomID(), temp);
 		}
-			System.out.println(map.toString());
-			map.get(1).setVisitedRoom(true);
 			return map;
 	}
 

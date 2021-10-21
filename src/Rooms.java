@@ -1,7 +1,7 @@
 public class Rooms {
+	private int roomID = -1;
 	private String roomName = "Empty";
 	private String roomDesc = "This is an empty Rooms class";
-	private int roomID = -1;
 	private int north = -1;
 	private int east = -1;
 	private int south = -1;

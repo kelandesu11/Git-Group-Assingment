@@ -6,7 +6,6 @@
 
 public class DataManagement {
 	
-	private TextLoader loader = new TextLoader();
 	private Storage storage = new Storage();
 	private Player player = new Player();
 	
@@ -14,7 +13,7 @@ public class DataManagement {
 	}
 	
 	public void newGame() {
-		loader.loadFile();
+		storage.loadFile();
 	}
 	
 	public Rooms getRoom(int id) {
