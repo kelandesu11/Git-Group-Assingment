@@ -8,8 +8,8 @@ You are inside the fence , near the side of the pool, to your left is the big me
 
 2
 The Living Room
-You just entered the living room ,a huge room with an oversized TV and many paintings hanging on the wall. You see a comfy leather couch, but this aint no time to rest.
-3
+You just entered the living room ,a huge room with an over sized TV and many paintings hanging on the wall. You see a comfy leather couch, but this aint no time to rest.
+-1
 1
 3
 -1
@@ -24,7 +24,7 @@ This is the downstairs bathroom, all white tile, it looks suspiciously clean, ex
 
 4
 The Study
-You’ve made it to the study room, Books and papers scattered everywhere, the radio still playing some music you don't recognize.
+You've made it to the study room, Books and papers scattered everywhere, the radio still playing some music you don't recognize.
 6
 5
 -1

@@ -8,7 +8,7 @@ public class Controller {
 		
 		model.newGame();
 		
-		for (model.prompt(); scan.hasNextLine(); model.prompt()) {
+		for (System.out.println(model.getPlayerRoom().toString()), model.prompt(); scan.hasNextLine(); model.prompt()) {
 			
 			String input = scan.nextLine().replaceAll("\n", "").toLowerCase();
 			

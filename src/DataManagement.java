@@ -20,13 +20,12 @@ public class DataManagement {
 		return storage.getRoom(id);
 	}
 	public Rooms getPlayerRoom() {
-		System.out.println(player.getPlayerLocation());
 		return storage.getRoom(player.getPlayerLocation());
 	}
 	
 	public void movePlayerNorth() {
 		if (getPlayerRoom().getNorth() != -1) {
-			player.setPlayerLocation(getRoom(player.getPlayerLocation()).getNorth());
+			player.setPlayerLocation(getPlayerRoom().getNorth());
 			System.out.println(getPlayerRoom().toString());
 		}
 		else
@@ -34,22 +33,28 @@ public class DataManagement {
 	}
 	
 	public void movePlayerSouth() {
-		if (getPlayerRoom().getSouth() != -1)
+		if (getPlayerRoom().getSouth() != -1) {
 			player.setPlayerLocation(getPlayerRoom().getSouth());
+			System.out.println(getPlayerRoom().toString());
+		}
 		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
 	
 	public void movePlayerEast() {
-		if (getPlayerRoom().getEast() != -1)
+		if (getPlayerRoom().getEast() != -1) {
 			player.setPlayerLocation(getPlayerRoom().getEast());
+			System.out.println(getPlayerRoom().toString());
+		}
 		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
 	
 	public void movePlayerWest() {
-		if (getPlayerRoom().getWest() != -1)
+		if (getPlayerRoom().getWest() != -1) {
 			player.setPlayerLocation(getPlayerRoom().getWest());
+			System.out.println(getPlayerRoom().toString());
+		}
 		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
@@ -59,10 +64,10 @@ public class DataManagement {
 	 * The order of connections is North, East, South, West.
 	 */
 	public int[] getConnections() {
-		int[] connections = {-1, -1, -1, -1};
+		int[] connections = new int[4];
 		connections[0] = getPlayerRoom().getNorth();
-		connections[1] = getPlayerRoom().getEast();
-		connections[2] = getPlayerRoom().getSouth();
+		connections[1] = getPlayerRoom().getSouth();
+		connections[2] = getPlayerRoom().getEast();
 		connections[3] = getPlayerRoom().getWest();
 		return connections;
 	}
@@ -72,17 +77,17 @@ public class DataManagement {
 	 */
 	private String getConnectionsString() {
 		int[] connections = getConnections();
-		String links = "Your movement options are: ";
+		String links = "Your movement options are:";
 		
 		if (connections[0] != -1)
-			links += "North, ";
+			links += " North";
 		if (connections[1] != -1)
-			links += "South, ";
+			links += " South";
 		if (connections[2] != -1)
-			links += "East, ";
+			links += " East";
 		if (connections[3] != -1)
-			links += "West.";
-		links += " Exit with \"x\" or \"exit\"";
+			links += " West";
+		links += "\nExit with \"x\" or \"exit\"";
 		
 		return links;
 	}
