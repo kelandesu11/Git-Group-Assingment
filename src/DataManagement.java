@@ -24,19 +24,31 @@ public class DataManagement {
 	}
 	
 	public void movePlayerNorth() {
-		player.setPlayerLocation(getPlayerRoom().getNorth());
+		if (getPlayerRoom().getNorth() != -1)
+			player.setPlayerLocation(getPlayerRoom().getNorth());
+		else
+			System.out.println("Ouch! You walk into a wall!");
 	}
 	
 	public void movePlayerSouth() {
-		player.setPlayerLocation(getPlayerRoom().getSouth());
+		if (getPlayerRoom().getSouth() != -1)
+			player.setPlayerLocation(getPlayerRoom().getNorth());
+		else
+			System.out.println("Ouch! You walk into a wall!");
 	}
 	
 	public void movePlayerEast() {
-		player.setPlayerLocation(getPlayerRoom().getEast());
+		if (getPlayerRoom().getEast() != -1)
+			player.setPlayerLocation(getPlayerRoom().getNorth());
+		else
+			System.out.println("Ouch! You walk into a wall!");
 	}
 	
 	public void movePlayerWest() {
-		player.setPlayerLocation(getPlayerRoom().getWest());
+		if (getPlayerRoom().getWest() != -1)
+			player.setPlayerLocation(getPlayerRoom().getNorth());
+		else
+			System.out.println("Ouch! You walk into a wall!");
 	}
 	
 	/*
