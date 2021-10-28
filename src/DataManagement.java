@@ -12,17 +12,26 @@ public class DataManagement {
 	public DataManagement() {
 	}
 	
+	//Author: Jeremy Stiff
 	public void newGame() {
 		storage.loadFile();
 	}
 	
+	public void saveGame() {
+		storage.saveFile();
+	}
+	
+	//Author: Jeremy Stiff
 	public Rooms getRoom(int id) {
 		return storage.getRoom(id);
 	}
+	
+	//Author: Jeremy Stiff
 	public Rooms getPlayerRoom() {
 		return storage.getRoom(player.getPlayerLocation());
 	}
 	
+	//Author: Jeremy Stiff
 	public void movePlayerNorth() {
 		if (getPlayerRoom().getNorth() != -1) {
 			player.setPlayerLocation(getPlayerRoom().getNorth());
@@ -32,6 +41,7 @@ public class DataManagement {
 			System.out.println("Ouch! You walk into a wall!");
 	}
 	
+	//Author: Jeremy Stiff
 	public void movePlayerSouth() {
 		if (getPlayerRoom().getSouth() != -1) {
 			player.setPlayerLocation(getPlayerRoom().getSouth());
@@ -41,6 +51,7 @@ public class DataManagement {
 			System.out.println("Ouch! You walk into a wall!");
 	}
 	
+	//Author: Jeremy Stiff
 	public void movePlayerEast() {
 		if (getPlayerRoom().getEast() != -1) {
 			player.setPlayerLocation(getPlayerRoom().getEast());
@@ -50,6 +61,7 @@ public class DataManagement {
 			System.out.println("Ouch! You walk into a wall!");
 	}
 	
+	//Author: Jeremy Stiff
 	public void movePlayerWest() {
 		if (getPlayerRoom().getWest() != -1) {
 			player.setPlayerLocation(getPlayerRoom().getWest());
@@ -59,7 +71,7 @@ public class DataManagement {
 			System.out.println("Ouch! You walk into a wall!");
 	}
 	
-	/*
+	/* Author: Jeremy Stiff
 	 * This method returns an integer array of connections -1 is no connection.
 	 * The order of connections is North, East, South, West.
 	 */
@@ -72,7 +84,7 @@ public class DataManagement {
 		return connections;
 	}
 	
-	/*
+	/* Author: Jeremy Stiff
 	 * Returns a list of avaliable connections.
 	 */
 	private String getConnectionsString() {
@@ -92,11 +104,13 @@ public class DataManagement {
 		return links;
 	}
 	
+	//Author: Jeremy Stiff
 	public void prompt() {
 		System.out.println(getConnectionsString());
 	}
 	
 	@Override
+	//Author: Jeremy Stiff
 	public String toString() {
 		return "Player room is " + player.getPlayerLocation() + "\n" + storage.toString();
 	}
