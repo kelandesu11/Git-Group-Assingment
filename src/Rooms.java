@@ -96,4 +96,19 @@ public class Rooms implements Serializable{
 	public String toString() {
 		return getRoomID() + " " + getRoomName() + "\n" + getRoomDesc();
 	}
+
+	public boolean hasMonster() {
+		// TODO is monster here?
+		return false;
+	}
+
+	public boolean hasPuzzle() {
+		// TODO is puzzle here?
+		return false;
+	}
+
+	public boolean hasItem() {
+		// TODO is item here?
+		return false;
+	}
 }

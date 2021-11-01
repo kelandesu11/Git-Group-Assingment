@@ -96,21 +96,40 @@ public class DataManagement {
 		String links = "Your movement options are:";
 
 		if (connections[0] != -1)
-			links += " North";
+			links += " n or North";
 		if (connections[1] != -1)
-			links += " South";
+			links += " s or South";
 		if (connections[2] != -1)
-			links += " East";
+			links += " e or East";
 		if (connections[3] != -1)
-			links += " West";
-		links += "\nExit with \"x\" or \"exit\"";
+			links += " w or West";
 
 		return links;
+	}
+	
+	//Author: Jeremy Stiff
+	private String getActions() {
+		String actions = "Your available actions are:";
+		
+		//TODO Code that gathers and returns actions similar to above method.
+		if (getPlayerRoom().hasMonster())
+			actions += " m or Monster";
+		if (getPlayerRoom().hasPuzzle())
+			actions += " p or Puzzle";
+		if (getPlayerRoom().hasItem())
+			actions += " i or Item";
+		
+		if (actions.equals("Your available actions are:"))
+			actions = "There is nothing to do here.";
+		
+		return actions;
 	}
 
 	// Author: Jeremy Stiff
 	public void prompt() {
 		System.out.println(getConnectionsString());
+		System.out.println(getActions());
+		System.out.println("Exit with \"x\" or \"exit\"");
 	}
 
 	@Override
