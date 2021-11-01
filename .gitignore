@@ -1,5 +1,6 @@
 /JusticeLeague_GroupGitAssingment.iml
 *.class
+SaveGame.dat
 
 # Log file
 *.log

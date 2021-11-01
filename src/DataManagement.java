@@ -5,75 +5,79 @@
  */
 
 public class DataManagement {
-	
+
 	private Storage storage = new Storage();
-	private Player player = new Player();
-	
-	public DataManagement() {
-	}
-	
-	//Author: Jeremy Stiff
-	public void newGame() {
-		storage.loadFile();
-	}
-	
+	private TextLoader loader = new TextLoader();
+
+	public DataManagement() {}
+
+	// Author: Jeremy Stiff
 	public void saveGame() {
-		storage.saveFile();
+		loader.writeStorage(storage);
+	}
+
+	// Author: Jeremy Stiff
+	public void loadSave() {
+		Storage temp = new Storage();
+		temp = loader.loadSave();
+		storage = temp;
+	}
+
+	// Author: Jeremy Stiff
+	public void newGame() {
+		storage.setMap(loader.loadFile());
 	}
 	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	public Rooms getRoom(int id) {
 		return storage.getRoom(id);
 	}
-	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	public Rooms getPlayerRoom() {
-		return storage.getRoom(player.getPlayerLocation());
+		return storage.getRoom(storage.getPlayer().getPlayerLocation());
 	}
-	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	public void movePlayerNorth() {
 		if (getPlayerRoom().getNorth() != -1) {
-			player.setPlayerLocation(getPlayerRoom().getNorth());
+			storage.getPlayer().setPlayerLocation(getPlayerRoom().getNorth());
 			System.out.println(getPlayerRoom().toString());
-		}
-		else
+		} else
 			System.out.println("Ouch! You walk into a wall!");
 	}
-	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	public void movePlayerSouth() {
 		if (getPlayerRoom().getSouth() != -1) {
-			player.setPlayerLocation(getPlayerRoom().getSouth());
+			storage.getPlayer().setPlayerLocation(getPlayerRoom().getSouth());
 			System.out.println(getPlayerRoom().toString());
-		}
-		else
+		} else
 			System.out.println("Ouch! You walk into a wall!");
 	}
-	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	public void movePlayerEast() {
 		if (getPlayerRoom().getEast() != -1) {
-			player.setPlayerLocation(getPlayerRoom().getEast());
+			storage.getPlayer().setPlayerLocation(getPlayerRoom().getEast());
 			System.out.println(getPlayerRoom().toString());
-		}
-		else
+		} else
 			System.out.println("Ouch! You walk into a wall!");
 	}
-	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	public void movePlayerWest() {
 		if (getPlayerRoom().getWest() != -1) {
-			player.setPlayerLocation(getPlayerRoom().getWest());
+			storage.getPlayer().setPlayerLocation(getPlayerRoom().getWest());
 			System.out.println(getPlayerRoom().toString());
-		}
-		else
+		} else
 			System.out.println("Ouch! You walk into a wall!");
 	}
-	
-	/* Author: Jeremy Stiff
-	 * This method returns an integer array of connections -1 is no connection.
-	 * The order of connections is North, East, South, West.
+
+	/*
+	 * Author: Jeremy Stiff This method returns an integer array of connections -1
+	 * is no connection. The order of connections is North, East, South, West.
 	 */
 	public int[] getConnections() {
 		int[] connections = new int[4];
@@ -83,14 +87,14 @@ public class DataManagement {
 		connections[3] = getPlayerRoom().getWest();
 		return connections;
 	}
-	
-	/* Author: Jeremy Stiff
-	 * Returns a list of avaliable connections.
+
+	/*
+	 * Author: Jeremy Stiff Returns a list of avaliable connections.
 	 */
 	private String getConnectionsString() {
 		int[] connections = getConnections();
 		String links = "Your movement options are:";
-		
+
 		if (connections[0] != -1)
 			links += " North";
 		if (connections[1] != -1)
@@ -100,19 +104,19 @@ public class DataManagement {
 		if (connections[3] != -1)
 			links += " West";
 		links += "\nExit with \"x\" or \"exit\"";
-		
+
 		return links;
 	}
-	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	public void prompt() {
 		System.out.println(getConnectionsString());
 	}
-	
+
 	@Override
-	//Author: Jeremy Stiff
+	// Author: Jeremy Stiff
 	public String toString() {
-		return "Player room is " + player.getPlayerLocation() + "\n" + storage.toString();
+		return "Player room is " + storage.getPlayer().getPlayerLocation() + "\n" + storage.toString();
 	}
-	
+
 }

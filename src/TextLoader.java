@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /*
@@ -14,8 +15,12 @@ import java.util.Scanner;
  * The purpose of this class is to load room data from a text file into a hash map
  * and pass it onto the Storage class.
  */
-public class TextLoader {
+public class TextLoader implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8578811013575599820L;
 	private Scanner scanin = new Scanner(System.in);
 	private Scanner scanfile;
 	private File file;
@@ -77,7 +82,6 @@ public class TextLoader {
 		try {
 			FileOutputStream fileout = new FileOutputStream(new File("SaveGame.dat"));
 			ObjectOutputStream objout = new ObjectOutputStream(fileout);
-
 			objout.writeObject(storage);
 
 		} catch (FileNotFoundException e) {

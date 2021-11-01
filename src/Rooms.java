@@ -1,4 +1,10 @@
-public class Rooms {
+import java.io.Serializable;
+
+public class Rooms implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 638851069751677125L;
 	private int roomID = -1;
 	private String roomName = "Empty";
 	private String roomDesc = "This is an empty Rooms class";

@@ -12,8 +12,8 @@ public class Storage implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 5761208788754196741L;
-	private TextLoader loader = new TextLoader();
 	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
+	private Player player = new Player();
 	
 	//Author: Jeremy Stiff
 	public void setMap(HashMap<Integer, Rooms> map) {
@@ -25,18 +25,14 @@ public class Storage implements Serializable{
 		return map.get(room.getRoomID());
 	}
 	
+	// Author: Jeremy Stiff
+	public Player getPlayer() {
+		return player;
+	}
+	
 	//Author: Jeremy Stiff
 	public Rooms getRoom(int id) {
 		return map.get(id);
-	}
-	
-	//Author: Jeremy Stiff
-	public void loadFile() {
-		setMap(loader.loadFile());
-	}
-	
-	public void saveFile() {
-		loader.writeStorage(this);
 	}
 	
 	@Override
