@@ -76,7 +76,48 @@ public class TextLoader implements Serializable {
 		map.get(1).setVisitedRoom(true);
 		return map;
 	}
+	
+	/**
+	 * Author: Kelan McNally
+	 */
+	public HashMap<Integer, Items> loadItemFile() {
 
+		try {
+			file = new File("Items.txt");
+			scanfile = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Enter the Items.txt file path");
+			try {
+				file = new File(scanin.nextLine());
+				scanfile = new Scanner(file);
+			} catch (FileNotFoundException e1) {
+				System.out.println("Incorrect path");
+				loadFile();
+			}
+		}
+		return readItemFile();
+	}
+	
+	/**
+	 * Author: Kelan McNally
+	 */
+	private HashMap<Integer, Items> readItemFile() {
+		HashMap<Integer, Items> map = new HashMap<Integer, Items>();
+
+		while (scanfile.hasNext()) {
+			Items temp = new Items();
+			temp.setItemID(scanfile.nextInt());
+			scanfile.nextLine();
+			temp.setItemName(scanfile.nextLine());
+			temp.setItemDesc(scanfile.nextLine());
+			temp.setItemEffect(scanfile.nextLine());
+			temp.setItemLocation(scanfile.nextLine());
+			map.put(temp.getItemID(), temp);
+			
+		}
+		return map;
+	}
+		
 	// Author: Jeremy Stiff
 	public void writeStorage(Storage storage) {
 		try {

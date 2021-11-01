@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 public class Rooms implements Serializable{
 	/**
-	 * 
+	 * Author: Kelan McNally
 	 */
 	private static final long serialVersionUID = 638851069751677125L;
 	private int roomID = -1;

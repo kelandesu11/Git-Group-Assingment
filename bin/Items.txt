@@ -1,0 +1,55 @@
+1
+Wooden Sword
+It may not be the best sword, but it gets the job done.
+Deals 10pts of damage to monster HP.
+R1
+2
+Silver Sword
+An upgrade over the wooden sword, the silver sword gets the job done more efficiently.
+Deals 25pts of damage to monster HP.
+M2
+3
+Legendary Sword
+The best of the best, monsters cower in fear at the sight of your sword.
+Deals 50pts of damage to the monsters HP.
+M10
+4
+Health Potion
+A bright red potion that could be used to replenish HP.
+Restores 10pts of HP to the player.
+R9, R14, M3, P4, P7
+5
+Strength Potion
+A bright yellow potion that can be used to increase damage.
+Increases the players damage by 10pts.
+M5, P2, P5, P6
+6
+Golden Ring
+A shiny ring that when equipped increases health.
+Increases players HP by 10pts.
+R5, M7
+7
+Hero's Cape
+A magnificent red cape that when equipped increases your damage.
+Increases player damage by 10pts.
+R6
+8
+Knights Chestplate
+A sturdy silver piece of armor that will protect you against the monsters.
+Increases players HP by 50pts.
+R12
+9
+Knights Helmet
+A silver helmet of a former knight that will protect you against the monsters.
+Increases players HP by 25pts.
+M8
+10
+Knights Greaves
+The silver greaves of a slain knight which can prove useful to you in your adventure.
+Increases player HP by 25pts.
+R3
+11
+Gold Coins
+Gold coins can be collected and can be used to progress in the game.
+Used to enter the final room.
+M1, M4, M6, M9, P1, P3, 
