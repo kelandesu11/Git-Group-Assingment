@@ -111,6 +111,7 @@ public class Rooms implements Serializable{
 	public boolean hasItem() {
 		// TODO is item here?
 		return false;
+		
 	}
 	
 	//Author: Kelan McNally

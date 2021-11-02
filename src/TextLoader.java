@@ -113,6 +113,7 @@ public class TextLoader implements Serializable {
 			temp.setItemDesc(scanfile.nextLine());
 			temp.setItemEffect(scanfile.nextLine());
 			temp.setItemLocation(scanfile.nextLine());
+			Rooms.addItem(temp);
 			
 		}
 		return items;

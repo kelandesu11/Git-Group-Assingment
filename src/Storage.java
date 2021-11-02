@@ -42,6 +42,14 @@ public class Storage implements Serializable{
 		return map.get(id);
 	}
 	
+	public Items getItem(Items item) {
+		return items.get(item.getItemID());
+	}
+	
+	public Items getItem(int id) {
+		return items.get(id);
+	}
+	
 	@Override
 	//Author: Jeremy Stiff
 	public String toString() {
