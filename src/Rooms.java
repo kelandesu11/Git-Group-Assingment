@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Rooms implements Serializable{
 	/**
@@ -111,4 +112,16 @@ public class Rooms implements Serializable{
 		// TODO is item here?
 		return false;
 	}
+	
+	//Author: Kelan McNally
+public static ArrayList<Items> items = new ArrayList<Items>();
+	
+	public static void addItem(Items item) {
+		items.add(item);
+	}
+
+	public static ArrayList<Items> getItems(){
+		return items;
+	}
+	
 }

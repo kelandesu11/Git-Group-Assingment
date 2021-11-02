@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /*
@@ -13,12 +14,17 @@ public class Storage implements Serializable{
 	 */
 	private static final long serialVersionUID = 5761208788754196741L;
 	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
-	private HashMap<Integer, Items> itemMap = new HashMap<Integer, Items>();
+	private ArrayList<Items> items = new ArrayList<Items>(); //Author: Kelan McNally
 	private Player player = new Player();
 	
 	//Author: Jeremy Stiff
 	public void setMap(HashMap<Integer, Rooms> map) {
 		this.map = map;
+	}
+	
+	//Author: Kelan McNally
+	public void setItems(ArrayList<Items> items) {
+		this.items = items;
 	}
 	
 	//Author: Jeremy Stiff
@@ -34,16 +40,6 @@ public class Storage implements Serializable{
 	//Author: Jeremy Stiff
 	public Rooms getRoom(int id) {
 		return map.get(id);
-	}
-	
-	//Author: Kelan McNally
-	public Items hasItem(Items item) {
-		return itemMap.get(item.getItemID());
-	}
-	
-	//Author: Kelan McNally
-	public Items hasItem(int id) {
-		return itemMap.get(id);
 	}
 	
 	@Override

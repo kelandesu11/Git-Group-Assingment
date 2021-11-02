@@ -26,6 +26,7 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void newGame() {
 		storage.setMap(loader.loadFile());
+		storage.setItems(loader.loadItemFile());
 	}
 	
 

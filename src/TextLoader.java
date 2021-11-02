@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -80,10 +81,10 @@ public class TextLoader implements Serializable {
 	/**
 	 * Author: Kelan McNally
 	 */
-	public HashMap<Integer, Items> loadItemFile() {
+	public ArrayList<Items> loadItemFile() {
 
 		try {
-			file = new File("Items.txt");
+			file = new File("C:\\Users\\User\\eclipse-workspace\\JusticeLeague_GroupGitAssingment\\src\\Items.txt");
 			scanfile = new Scanner(file);
 		} catch (FileNotFoundException e) {
 			System.out.println("Enter the Items.txt file path");
@@ -101,8 +102,8 @@ public class TextLoader implements Serializable {
 	/**
 	 * Author: Kelan McNally
 	 */
-	private HashMap<Integer, Items> readItemFile() {
-		HashMap<Integer, Items> map = new HashMap<Integer, Items>();
+	private ArrayList<Items> readItemFile() {
+		ArrayList<Items> items = new ArrayList<Items>();
 
 		while (scanfile.hasNext()) {
 			Items temp = new Items();
@@ -112,10 +113,9 @@ public class TextLoader implements Serializable {
 			temp.setItemDesc(scanfile.nextLine());
 			temp.setItemEffect(scanfile.nextLine());
 			temp.setItemLocation(scanfile.nextLine());
-			map.put(temp.getItemID(), temp);
 			
 		}
-		return map;
+		return items;
 	}
 		
 	// Author: Jeremy Stiff
