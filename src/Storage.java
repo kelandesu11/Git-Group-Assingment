@@ -20,6 +20,10 @@ public class Storage implements Serializable{
 		this.map = map;
 	}
 	
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+	
 	//Author: Jeremy Stiff
 	public Rooms currentRoom() {
 		return getRoom(player.getPlayerLocation());
@@ -38,6 +42,10 @@ public class Storage implements Serializable{
 	//Author: Jeremy Stiff
 	public Rooms getRoom(int id) {
 		return map.get(id);
+	}
+	
+	public HashMap<Integer, Rooms> getMap() {
+		return map;
 	}
 	
 	@Override
