@@ -1,8 +1,16 @@
+import java.io.Serializable;
+
 /**
- * @dkilbert Jeremy Edit 11/3/21: Added Entity parent class
+ * @dkilbert 
+ * Jeremy Edit 11/3/21: Added Entity parent class, made class serializable.
  */
 
-public class Monsters implements Entity {
+
+public class Monsters extends Entity implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -53589054373799944L;
 	private String name;
 	private String description;
 	private int id;
@@ -29,22 +37,6 @@ public class Monsters implements Entity {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public int getHealth() {
-		return health;
-	}
-
-	public void setHealth(int health) {
-		this.health = health;
-	}
-
-	public int getDamage() {
-		return damage;
-	}
-
-	public void setDamage(int damage) {
-		this.damage = damage;
 	}
 
 	public Monsters(String name, String description, int id, int health, int damage) {

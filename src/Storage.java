@@ -13,7 +13,7 @@ public class Storage implements Serializable{
 	 */
 	private static final long serialVersionUID = 5761208788754196741L;
 	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
-	private Player player = new Player();
+	private Player player = new Player(20, 2);
 	
 	//Author: Jeremy Stiff
 	public void setMap(HashMap<Integer, Rooms> map) {

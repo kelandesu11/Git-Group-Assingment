@@ -8,6 +8,7 @@ public class DataManagement {
 
 	private Storage storage = new Storage();
 	private TextLoader loader = new TextLoader();
+	private CombatHandler combathandler;
 
 	public DataManagement() {}
 
@@ -26,6 +27,14 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void newGame() {
 		storage.setMap(loader.loadFile());
+	}
+	
+	public void startCombat(Player player, Monsters monster) {
+		combathandler = new CombatHandler(player, monster);
+	}
+	
+	public CombatHandler getCombatHandler() {
+		return combathandler;
 	}
 	
 
