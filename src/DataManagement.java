@@ -45,7 +45,7 @@ public class DataManagement {
 
 	// Author: Jeremy Stiff
 	public Rooms getPlayerRoom() {
-		return storage.getRoom(storage.getPlayer().getPlayerLocation());
+		return storage.currentRoom();
 	}
 
 	// Author: Jeremy Stiff

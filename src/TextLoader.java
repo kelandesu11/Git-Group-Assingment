@@ -111,12 +111,12 @@ public class TextLoader implements Serializable {
 				System.out.println("Incorrect path");
 				loadSave();
 			} catch (IOException e2) {
-				System.out.print("IO exception");
+				System.out.print("IO exception ");
 			} catch (ClassNotFoundException e3) {
 				System.out.println("Class not found");
 			}
 		} catch (IOException e2) {
-			System.out.print("IO exception");
+			System.out.print("IO exception ");
 		} catch (ClassNotFoundException e3) {
 			System.out.println("Class not found");
 		}

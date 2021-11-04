@@ -21,6 +21,11 @@ public class Storage implements Serializable{
 	}
 	
 	//Author: Jeremy Stiff
+	public Rooms currentRoom() {
+		return getRoom(player.getPlayerLocation());
+	}
+	
+	//Author: Jeremy Stiff
 	public Rooms getRoom(Rooms room) {
 		return map.get(room.getRoomID());
 	}
