@@ -14,3 +14,4 @@ SaveGame.dat
 *.tar.gz
 *.rar
 /.idea/
+bin/*
