@@ -140,6 +140,7 @@ public class TextLoader implements Serializable {
 			ObjectInputStream objin = new ObjectInputStream(in);
 			Storage out = (Storage) objin.readObject();
 			objin.close();
+			System.out.println("Loaded game, current room: " + out.currentRoom().getRoomName());
 			return out;
 		} catch (FileNotFoundException e) {
 			System.out.println("Save game does not exist in game folder.\nInput correct path.");
@@ -148,17 +149,18 @@ public class TextLoader implements Serializable {
 				ObjectInputStream objin = new ObjectInputStream(in);
 				Storage out = (Storage) objin.readObject();
 				objin.close();
+				
 				return out;
 			} catch (FileNotFoundException e1) {
 				System.out.println("Incorrect path");
 				loadSave();
 			} catch (IOException e2) {
-				System.out.print("IO exception");
+				System.out.print("IO exception ");
 			} catch (ClassNotFoundException e3) {
 				System.out.println("Class not found");
 			}
 		} catch (IOException e2) {
-			System.out.print("IO exception");
+			System.out.print("IO exception ");
 		} catch (ClassNotFoundException e3) {
 			System.out.println("Class not found");
 		}

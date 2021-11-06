@@ -8,6 +8,7 @@ public class DataManagement {
 
 	private Storage storage = new Storage();
 	private TextLoader loader = new TextLoader();
+	private CombatHandler combathandler;
 
 	public DataManagement() {}
 
@@ -29,6 +30,14 @@ public class DataManagement {
 		storage.setItems(loader.loadItemFile());
 	}
 	
+	public void startCombat(Player player, Monsters monster) {
+		combathandler = new CombatHandler(player, monster);
+	}
+	
+	public CombatHandler getCombatHandler() {
+		return combathandler;
+	}
+	
 
 	// Author: Jeremy Stiff
 	public Rooms getRoom(int id) {
@@ -37,7 +46,7 @@ public class DataManagement {
 
 	// Author: Jeremy Stiff
 	public Rooms getPlayerRoom() {
-		return storage.getRoom(storage.getPlayer().getPlayerLocation());
+		return storage.currentRoom();
 	}
 
 	// Author: Jeremy Stiff
