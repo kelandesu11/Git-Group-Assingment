@@ -64,6 +64,12 @@ public class Storage implements Serializable{
 	public Items getItem(int id) {
 		return items.get(id);
 	}
+	
+	//Author: Kelan McNally
+	public ArrayList<Items> getItems(){
+		return items;
+	}
+	
 	public HashMap<Integer, Rooms> getMap() {
 		return map;
 

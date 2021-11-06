@@ -23,6 +23,7 @@ public class TextLoader implements Serializable {
 	 */
 	private static final long serialVersionUID = 8578811013575599820L;
 	private Scanner scanin = new Scanner(System.in);
+	private HashMap<Integer, Rooms> map;
 	private Scanner scanfile;
 	private File file;
 
@@ -59,7 +60,7 @@ public class TextLoader implements Serializable {
 	 * North connection East connection South connection West connection
 	 */
 	private HashMap<Integer, Rooms> readFile() {
-		HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
+		map = new HashMap<Integer, Rooms>();
 
 		while (scanfile.hasNext()) {
 			Rooms temp = new Rooms();
@@ -102,7 +103,7 @@ public class TextLoader implements Serializable {
 	/**
 	 * Author: Kelan McNally
 	 */
-	private ArrayList<Items> readItemFile() {
+	ArrayList<Items> readItemFile() {
 		ArrayList<Items> items = new ArrayList<Items>();
 
 		while (scanfile.hasNext()) {
@@ -113,8 +114,10 @@ public class TextLoader implements Serializable {
 			temp.setItemDesc(scanfile.nextLine());
 			temp.setItemEffect(scanfile.nextLine());
 			temp.setItemLocation(scanfile.nextLine());
-			Rooms.items.add(temp);
+			items.add(temp.getItemID(), temp);
 			
+			Rooms item = new Rooms();
+			item.addItem(items);
 		}
 		return items;
 	}
