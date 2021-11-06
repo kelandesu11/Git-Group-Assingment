@@ -14,23 +14,22 @@ public class Storage implements Serializable{
 	 */
 	private static final long serialVersionUID = 5761208788754196741L;
 	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
-<<<<<<< HEAD
+
 	private ArrayList<Items> items = new ArrayList<Items>(); //Author: Kelan McNally
-	private Player player = new Player();
-=======
 	private Player player = new Player(20, 2);
->>>>>>> master
+
 	
 	//Author: Jeremy Stiff
 	public void setMap(HashMap<Integer, Rooms> map) {
 		this.map = map;
 	}
 	
-<<<<<<< HEAD
+
 	//Author: Kelan McNally
 	public void setItems(ArrayList<Items> items) {
 		this.items = items;
-=======
+	}
+
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
@@ -38,7 +37,7 @@ public class Storage implements Serializable{
 	//Author: Jeremy Stiff
 	public Rooms currentRoom() {
 		return getRoom(player.getPlayerLocation());
->>>>>>> master
+
 	}
 	
 	//Author: Jeremy Stiff
@@ -56,17 +55,18 @@ public class Storage implements Serializable{
 		return map.get(id);
 	}
 	
-<<<<<<< HEAD
+	//Author: Kelan McNally
 	public Items getItem(Items item) {
 		return items.get(item.getItemID());
 	}
 	
+	//Author: Kelan McNally
 	public Items getItem(int id) {
 		return items.get(id);
-=======
+	}
 	public HashMap<Integer, Rooms> getMap() {
 		return map;
->>>>>>> master
+
 	}
 	
 	@Override

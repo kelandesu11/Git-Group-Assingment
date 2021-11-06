@@ -110,8 +110,13 @@ public class Rooms implements Serializable{
 
 	public boolean hasItem() {
 		// TODO is item here?
+		if(getRoomID() != Storage.getItem()) {
+			
 		return false;
-		
+		}
+		else {
+			return true;
+		}
 	}
 	
 	//Author: Kelan McNally
