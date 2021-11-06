@@ -84,7 +84,7 @@ public class TextLoader implements Serializable {
 	public ArrayList<Items> loadItemFile() {
 
 		try {
-			file = new File("C:\\Users\\kelan\\eclipse-workspace\\JusticeLeague-Fall2021\\src\\Items.txt");
+			file = new File("Items.txt");
 			scanfile = new Scanner(file);
 		} catch (FileNotFoundException e) {
 			System.out.println("Enter the Items.txt file path");
@@ -113,7 +113,7 @@ public class TextLoader implements Serializable {
 			temp.setItemDesc(scanfile.nextLine());
 			temp.setItemEffect(scanfile.nextLine());
 			temp.setItemLocation(scanfile.nextLine());
-			Rooms.addItem(temp);
+			Rooms.items.add(temp);
 			
 		}
 		return items;

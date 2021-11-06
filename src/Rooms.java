@@ -24,7 +24,17 @@ public class Rooms implements Serializable{
 		this.east = east;
 		this.west = west;
 	}
+		
+	//Author: Kelan McNally
+public ArrayList<Items> items = new ArrayList<Items>();
 	
+	public void addItem(Items item) {
+		items.add(item);
+	}
+
+	public ArrayList<Items> getItems(){
+		return items;
+	}
 	public Rooms() {
 		
 	}
@@ -110,7 +120,7 @@ public class Rooms implements Serializable{
 
 	public boolean hasItem() {
 		// TODO is item here?
-		if(getRoomID() != Storage.getItem()) {
+		if(items.isEmpty()) {
 			
 		return false;
 		}
@@ -119,15 +129,6 @@ public class Rooms implements Serializable{
 		}
 	}
 	
-	//Author: Kelan McNally
-public static ArrayList<Items> items = new ArrayList<Items>();
-	
-	public static void addItem(Items item) {
-		items.add(item);
-	}
 
-	public static ArrayList<Items> getItems(){
-		return items;
-	}
 	
 }
