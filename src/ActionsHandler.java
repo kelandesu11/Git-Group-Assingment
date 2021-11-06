@@ -9,6 +9,7 @@ public class ActionsHandler {
 
 	private Scanner scan = new Scanner(System.in);
 	private DataManagement model = new DataManagement();
+	private CombatHandler combat;
 	String input;
 
 	//Jeremy Stiff
@@ -20,11 +21,13 @@ public class ActionsHandler {
 			if (input.length() == 0)
 				continue;
 			Movement();
+			//Things a player can do in a room go here.
 			}
 
 		}
 	
 	//Jeremy Stiff
+	//Starts the game
 	public void welcomeMessage() {
 		System.out.println("Welcome to the game. Your options are:\n1) New game\n2) Load game\n3) Exit");
 		String input = scan.nextLine().replaceAll("\n", "");
@@ -50,6 +53,7 @@ public class ActionsHandler {
 	}
 
 	//Jeremy Stiff
+	//This will be dedicated method for movement and will include all checks to see if the movement is legal
 	public void Movement() {
 		if (input.equals("n") || input.equals("north"))
 			model.movePlayerNorth();
@@ -61,6 +65,35 @@ public class ActionsHandler {
 			model.movePlayerWest();
 		else if (input.equals("x") || input.equals("exit"))
 			Exit();
+	}
+	
+	//Jeremy Stiff
+	//This method will be used if the player decides to start combat with a monster
+	private void combatStart(Player player, Monsters monster) {
+		combat = new CombatHandler(player, monster);
+		
+	}
+	
+	//Jeremy Stiff
+	//This method will be the loop that continues until the fight is over
+	private void combatLoop() {
+		for (combatPrompt(); isFightGoing(); combatPrompt()) {
+			
+		}
+	}
+	
+	public boolean isFightGoing() {
+		if (combat.getPlayerHealth() > 0 && combat.getMonsterHealth() > 0)
+			return true;
+		return false;
+	}
+	
+	public void combatPrompt() {
+		System.out.println("Player HP: " + combat.getPlayerHealth());
+		System.out.println("Monster HP: " + combat.getMonsterHealth());
+		System.out.println("--------------------");
+		System.out.println("1) Attack\n2) Inventory");
+		input = scan.nextLine().replaceAll("\n", "");
 	}
 	
 	public void Exit() {

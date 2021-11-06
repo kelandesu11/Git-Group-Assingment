@@ -22,6 +22,7 @@ public class TextLoader implements Serializable {
 	 */
 	private static final long serialVersionUID = 8578811013575599820L;
 	private Scanner scanin = new Scanner(System.in);
+	private HashMap<Integer, Rooms> map;
 	private Scanner scanfile;
 	private File file;
 
@@ -58,7 +59,7 @@ public class TextLoader implements Serializable {
 	 * North connection East connection South connection West connection
 	 */
 	private HashMap<Integer, Rooms> readFile() {
-		HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
+		map = new HashMap<Integer, Rooms>();
 
 		while (scanfile.hasNext()) {
 			Rooms temp = new Rooms();

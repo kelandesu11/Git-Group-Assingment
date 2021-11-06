@@ -33,4 +33,14 @@ public class CombatHandler {
 	public void damageMonster(int damage) {
 		monster.setHealth(monster.getHealth() - damage);
 	}
+	
+	//Jeremy Stiff
+	public int getPlayerHealth() {
+		return player.getHealth();
+	}
+	
+	//jeremy Stiff
+	public int getMonsterHealth() {
+		return monster.getHealth();
+	}
 }
