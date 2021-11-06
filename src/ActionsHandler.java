@@ -78,7 +78,12 @@ public class ActionsHandler {
 	//This method will be the loop that continues until the fight is over
 	private void combatLoop() {
 		for (combatPrompt(); isFightGoing(); combatPrompt()) {
-			
+			if (input.equals("1"))
+				combat.attackAction();
+			else if (input.equals("2")) {
+				//combat.playerInventory();
+				//TODO: Implement player inventory and related features.
+			}
 		}
 	}
 	
