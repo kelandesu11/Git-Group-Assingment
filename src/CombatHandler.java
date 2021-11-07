@@ -12,6 +12,17 @@ public class CombatHandler {
 		this.monster = monster;
 	}
 	
+	public void attackAction() {
+		System.out.println("You attack the monster for " + player.getDamage() + " damage!");
+		playerAttack();
+		
+		if (monster.getHealth() > 0) {
+			System.out.println("The monster strikes back for " + monster.getDamage() + " damage!");
+			monsterAttack();
+		} else
+			System.out.println("Your blow defeats the monster!");
+	}
+	
 	//Author: Jeremy Stiff
 	public void playerAttack() {
 		monster.setHealth(monster.getHealth() - player.getDamage());
@@ -32,5 +43,15 @@ public class CombatHandler {
 	//Same as above for mosnter
 	public void damageMonster(int damage) {
 		monster.setHealth(monster.getHealth() - damage);
+	}
+	
+	//Jeremy Stiff
+	public int getPlayerHealth() {
+		return player.getHealth();
+	}
+	
+	//jeremy Stiff
+	public int getMonsterHealth() {
+		return monster.getHealth();
 	}
 }
