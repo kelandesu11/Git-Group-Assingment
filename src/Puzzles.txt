@@ -1,0 +1,24 @@
+0
+Rubric of Old
+An ancient cryptography is embedded into the door. Nine stones jut out of the wall in the pattern of a diamond, each with a strange symbol etched on its surface. From top to bottom the symbols are: A red sun, a yellow fish, a yellow bird, a blue sun, a purple moon, a green bird, a red hare, a green fish, and a purple hare.
+Simply press the symbol that is not repeated.(i.e. the purple moon)
+1
+Ancient Riddle
+I can never be stopped. I always end up the winner. I turn all to dust under my influence. Who am I?
+Time
+2
+Buff Statue
+You find a statue of a large, buff man with a grin on his face. He holds his bicep with one hand and stretches out his arm, with his other hand clenched halfway between open and a fist.
+Beat the statue at arm-wrestling.
+3
+Strange Symbol Game
+Two vertical lines are crossed by two horizontal lines forming squares. Their construction is inlaid gold in grey stone. When I approach, a magical force draws a circle onto one of the squares.
+Beat the game at tic-tac-toe.
+4
+More you take
+The more you take the more you leave behind. What are they?
+Footsteps
+5
+Howling
+Voiceless it cries and wingless it flutters, toothless it bites and mouthless it mutters. What is it?
+The wind
