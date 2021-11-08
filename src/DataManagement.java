@@ -86,8 +86,8 @@ public class DataManagement {
 
 	// Author: Jeremy Stiff
 	public void movePlayerWest() {
-		getPlayerRoom().resetPuzzle(); // SK
 		if (getPlayerRoom().getWest() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getWest() == getPlayer().getPreviousRoom())) {
+			getPlayerRoom().resetPuzzle(); // SK
 			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getWest());
 			System.out.println(getPlayerRoom().toString());
