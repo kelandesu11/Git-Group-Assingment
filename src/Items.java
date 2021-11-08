@@ -8,9 +8,9 @@ public class Items implements Serializable{
 	private String itemName = "Empty";
 	private String itemDesc = "This is an empty item class";
 	private String itemEffect = "This is also an empty item class";
-	private String itemLocation = "Yet another empty item class";
+	private int itemLocation = -1;
 	
-	public Items(int itemID, String itemName, String itemDesc, String itemEffect, String itemLocation) {
+	public Items(int itemID, String itemName, String itemDesc, String itemEffect, int itemLocation) {
 		this.itemID = itemID;
 		this.itemName = itemName;
 		this.itemDesc = itemDesc;
@@ -54,11 +54,11 @@ public class Items implements Serializable{
 		this.itemEffect = itemEffect;
 	}
 	
-	public String getItemLocation() {
+	public int getItemLocation() {
 		return itemLocation;
 	}
 	
-	public void setItemLocation(String itemLocation) {
+	public void setItemLocation(int itemLocation) {
 		this.itemLocation = itemLocation;
 	}
 }

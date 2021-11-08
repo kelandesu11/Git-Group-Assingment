@@ -28,8 +28,8 @@ public class Rooms implements Serializable{
 	//Author: Kelan McNally
 public ArrayList<Items> items = new ArrayList<Items>();
 	
-	public void addItem(ArrayList<Items> item) {
-	items.addAll(item);
+	public void addItem(Items temp) {
+	items.add(temp);
 	}
 
 	public ArrayList<Items> getItems(){

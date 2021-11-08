@@ -27,7 +27,6 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void newGame() {
 		storage.setMap(loader.loadFile());
-		storage.setItems(loader.loadItemFile());
 	}
 	
 	public void startCombat(Player player, Monsters monster) {
@@ -84,7 +83,43 @@ public class DataManagement {
 		} else
 			System.out.println("Ouch! You walk into a wall!");
 	}
+	
+	//Author: Kelan McNally
+	public void seeItems() {
+		if (storage.getItems().equals(getPlayerRoom())) {
+			System.out.println(storage.getItems());
+		}else {
+			System.out.println("No items exist in this room.");
+		}
+	}
 
+	//Author: Kelan McNally
+	public void pickupItem() {
+		System.out.println("You picked up the item!");
+		//add item to inventory array
+	}
+	
+	//Author: Kelan McNally
+	public void dropItem() {
+		System.out.println("You dropped the item!");
+		//remove item from inventory array
+		//change itemLocation to new room
+	}
+	
+	//Author: Kelan McNally
+	public void equipItem() {
+		//check if player has item in inventory array
+		System.out.println("You equipped the item!");
+		//else{
+		//System.out.println("You don't have that item!");
+	//}
+	}
+	
+	//Author: Kelan McNally
+	public void unequipItem() {
+		//check if player has item equipped
+		System.out.println("You unequipped the item");
+	}
 	/*
 	 * Author: Jeremy Stiff This method returns an integer array of connections -1
 	 * is no connection. The order of connections is North, East, South, West.

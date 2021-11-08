@@ -53,6 +53,8 @@ public class TextLoader implements Serializable {
 		}
 		return readFile();
 	}
+	
+	
 
 	/*
 	 * Author: Jeremy Stiff This method reads information on a correctly formatted
@@ -73,16 +75,19 @@ public class TextLoader implements Serializable {
 			temp.setEast(scanfile.nextInt());
 			temp.setWest(scanfile.nextInt());
 			map.put(temp.getRoomID(), temp);
-
 		}
 		map.get(1).setVisitedRoom(true);
+		
+		loadItemFile();
+		readItemFile();
+		
 		return map;
 	}
 	
 	/**
 	 * Author: Kelan McNally
 	 */
-	public ArrayList<Items> loadItemFile() {
+	public void loadItemFile() {
 
 		try {
 			file = new File("Items.txt");
@@ -94,32 +99,30 @@ public class TextLoader implements Serializable {
 				scanfile = new Scanner(file);
 			} catch (FileNotFoundException e1) {
 				System.out.println("Incorrect path");
-				loadFile();
+				loadItemFile();
 			}
 		}
-		return readItemFile();
+		
 	}
 	
 	/**
 	 * Author: Kelan McNally
 	 */
-	ArrayList<Items> readItemFile() {
-		ArrayList<Items> items = new ArrayList<Items>();
+	public void readItemFile() {
 
 		while (scanfile.hasNext()) {
-			Items temp = new Items();
-			temp.setItemID(scanfile.nextInt());
+			Items item = new Items();
+			item.setItemID(scanfile.nextInt());
 			scanfile.nextLine();
-			temp.setItemName(scanfile.nextLine());
-			temp.setItemDesc(scanfile.nextLine());
-			temp.setItemEffect(scanfile.nextLine());
-			temp.setItemLocation(scanfile.nextLine());
-			items.add(temp.getItemID(), temp);
-			
-			Rooms item = new Rooms();
-			item.addItem(items);
+			item.setItemName(scanfile.nextLine());
+			item.setItemDesc(scanfile.nextLine());
+			item.setItemEffect(scanfile.nextLine());
+			item.setItemLocation(scanfile.nextInt());
+			map.get(1).addItem(item);
 		}
-		return items;
+		
+		
+		
 	}
 		
 	// Author: Jeremy Stiff

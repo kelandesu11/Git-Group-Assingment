@@ -59,6 +59,10 @@ public class ActionsHandler {
 			model.movePlayerEast();
 		else if (input.equals("w") || input.equals("west"))
 			model.movePlayerWest();
+		else if (input.equals("i") || input.equals("items"))
+			model.seeItems();
+		else if (input.equals("p") || input.equals("pickup"))
+			model.pickupItem();
 		else if (input.equals("x") || input.equals("exit"))
 			Exit();
 	}
