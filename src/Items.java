@@ -61,4 +61,9 @@ public class Items implements Serializable{
 	public void setItemLocation(int itemLocation) {
 		this.itemLocation = itemLocation;
 	}
+	
+	@Override
+	public String toString() {
+		return getItemName();
+	}
 }

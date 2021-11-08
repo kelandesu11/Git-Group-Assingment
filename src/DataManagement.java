@@ -91,15 +91,6 @@ public class DataManagement {
 		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
-	
-	//Author: Kelan McNally
-	public void seeItems() {
-		if (storage.getItems().equals(getPlayerRoom())) {
-			System.out.println(storage.getItems());
-		}else {
-			System.out.println("No items exist in this room.");
-		}
-	}
 
 	//Author: Kelan McNally
 	public void pickupItem() {

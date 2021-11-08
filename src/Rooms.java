@@ -144,6 +144,10 @@ public ArrayList<Items> items = new ArrayList<Items>();
 		}
 	}
 	
+	public void displayItems() {
+		System.out.println(items.toString());
+	}
+
 
 	
 }

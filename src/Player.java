@@ -21,11 +21,6 @@ public class Player extends Entity implements Serializable{
 	public void setPlayerLocation(int room) {
 		roomID = room;
 	}
-	
-
-	public void displayItems() {
-		System.out.println(room.getItems());
-	}
 
 	//Jeremy Stiff
 	public int getPreviousRoom() {
