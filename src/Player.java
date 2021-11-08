@@ -7,6 +7,7 @@ public class Player extends Entity implements Serializable{
 	private static final long serialVersionUID = -3815529920572909198L;
 	private int roomID = 1;
 	private int health, damage;
+	Rooms room = new Rooms();
 	
 	public Player(int health, int damage) {
 		super(health, damage);
@@ -20,4 +21,7 @@ public class Player extends Entity implements Serializable{
 		roomID = room;
 	}
 	
+	public void displayItems() {
+		System.out.println(room.getItems());
+	}
 }
