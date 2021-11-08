@@ -27,6 +27,7 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void newGame() {
 		storage.setMap(loader.loadFile());
+		storage.assignPuzzle(); // SK
 	}
 
 	// Author: Jeremy Stiff
@@ -47,10 +48,11 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void movePlayerNorth() {
 		if (getPlayerRoom().getNorth() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getNorth() == getPlayer().getPreviousRoom())) {
+			getPlayerRoom().resetPuzzle(); // SK
 			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getNorth());
 			System.out.println(getPlayerRoom().toString());
-		} else if (getPlayerRoom().getNorth() != -1 && getPlayerRoom().hasMonster()) 
+		} else if (getPlayerRoom().getNorth() != -1 && getPlayerRoom().hasMonster())
 			System.out.println("You cannot move on until the monster has been defeated");
 		else
 			System.out.println("Ouch! You walk into a wall!");
@@ -59,10 +61,11 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void movePlayerSouth() {
 		if (getPlayerRoom().getSouth() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getSouth() == getPlayer().getPreviousRoom())) {
+			getPlayerRoom().resetPuzzle(); // SK
 			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getSouth());
 			System.out.println(getPlayerRoom().toString());
-		} else if (getPlayerRoom().getSouth() != -1 && getPlayerRoom().hasMonster()) 
+		} else if (getPlayerRoom().getSouth() != -1 && getPlayerRoom().hasMonster())
 			System.out.println("You cannot move on until the monster has been defeated");
 		else
 			System.out.println("Ouch! You walk into a wall!");
@@ -71,10 +74,11 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void movePlayerEast() {
 		if (getPlayerRoom().getEast() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getEast() == getPlayer().getPreviousRoom())) {
+			getPlayerRoom().resetPuzzle(); // SK
 			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getEast());
 			System.out.println(getPlayerRoom().toString());
-		} else if (getPlayerRoom().getEast() != -1 && getPlayerRoom().hasMonster()) 
+		} else if (getPlayerRoom().getEast() != -1 && getPlayerRoom().hasMonster())
 			System.out.println("You cannot move on until the monster has been defeated");
 		else
 			System.out.println("Ouch! You walk into a wall!");
@@ -83,10 +87,11 @@ public class DataManagement {
 	// Author: Jeremy Stiff
 	public void movePlayerWest() {
 		if (getPlayerRoom().getWest() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getWest() == getPlayer().getPreviousRoom())) {
+			getPlayerRoom().resetPuzzle(); // SK
 			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getWest());
 			System.out.println(getPlayerRoom().toString());
-		} else if (getPlayerRoom().getWest() != -1 && getPlayerRoom().hasMonster()) 
+		} else if (getPlayerRoom().getWest() != -1 && getPlayerRoom().hasMonster())
 			System.out.println("You cannot move on until the monster has been defeated");
 		else
 			System.out.println("Ouch! You walk into a wall!");
@@ -174,6 +179,11 @@ public class DataManagement {
 		System.out.println(getConnectionsString());
 		System.out.println(getActions());
 		System.out.println("Exit with \"x\" or \"exit\"");
+	}
+
+	// Author: Sanju
+	public void inspectPuzzle() {
+		System.out.println(getPlayerRoom().getPuzzle().prompt());
 	}
 
 	@Override

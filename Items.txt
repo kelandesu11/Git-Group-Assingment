@@ -1,52 +1,52 @@
 0
 Wooden Sword
 It may not be the best sword, but it gets the job done.
-Deals 10pts of damage to monster HP.
+10
 1
 1
 Silver Sword
 An upgrade over the wooden sword, the silver sword gets the job done more efficiently.
-Deals 25pts of damage to monster HP.
+25
 4
 2
 Legendary Sword
 The best of the best, monsters cower in fear at the sight of your sword.
-Deals 50pts of damage to the monsters HP.
+50
 18
 3
 Health Potion
 A bright red potion that could be used to replenish HP.
-Restores 10pts of HP to the player.
+10
 6
 4
 Strength Potion
 A bright yellow potion that can be used to increase damage.
-Increases the players damage by 10pts.
+10
 4
 5
 Golden Ring
 A shiny ring that when equipped increases health.
-Increases players HP by 10pts.
+10
 5
 6
 Hero's Cape
 A magnificent red cape that when equipped increases your damage.
-Increases player damage by 10pts.
+10
 6
 7
 Knights Chestplate
 A sturdy silver piece of armor that will protect you against the monsters.
-Increases players HP by 50pts.
+50
 12
 8
 Knights Helmet
 A silver helmet of a former knight that will protect you against the monsters.
-Increases players HP by 25pts.
+25
 7
 9
 Knights Greaves
 The silver greaves of a slain knight which can prove useful to you in your adventure.
-Increases player HP by 25pts.
+25
 3
 10
 Gold Coins

@@ -121,7 +121,7 @@ public class TextLoader implements Serializable {
 			scanfile.nextLine();
 			item.setItemName(scanfile.nextLine());
 			item.setItemDesc(scanfile.nextLine());
-			item.setItemEffect(scanfile.nextLine());
+			item.setItemEffect(scanfile.nextInt());
 			item.setItemLocation(scanfile.nextInt());
 			map.get(1).addItem(item);
 		}
