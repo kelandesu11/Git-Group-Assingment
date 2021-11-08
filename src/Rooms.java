@@ -109,9 +109,9 @@ public class Rooms implements Serializable{
 	}
 
 	public boolean hasMonster() {
-		if (monster == null)
-			return false;
-		return true;
+		if (monster != null)
+			return true;
+		return false;
 	}
 	
 	public void killMonster() {

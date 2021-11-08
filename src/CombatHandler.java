@@ -12,6 +12,7 @@ public class CombatHandler {
 		this.monster = monster;
 	}
 	
+	//Jeremy Stiff
 	public void attackAction() {
 		System.out.println("You attack the monster for " + player.getDamage() + " damage!");
 		playerAttack();

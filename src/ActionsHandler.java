@@ -103,19 +103,17 @@ public class ActionsHandler {
 			else if (input.equals("2")) {
 				// combat.playerInventory();
 				// TODO: Implement player inventory and related features.
-			} else if (combat.getPlayerHealth() <= 0) {
+			} if (combat.getPlayerHealth() <= 0) {
 				// TODO Player defeat
-			} else if (combat.getMonsterHealth() <= 0) {
+			} if (combat.getMonsterHealth() <= 0) {
 				model.getPlayerRoom().addMonster(null);
 			} else
 				continue;
 		}
-		System.out.println(model.getPlayer().getHealth());
-		System.out.println(model.getPlayerRoom().getMonster().getHealth());
 	}
 
 	private boolean isFightGoing() {
-		if (combat.getPlayerHealth() > 0 && combat.getMonsterHealth() > 0)
+		if (combat.getPlayerHealth() > 0 && (model.getPlayerRoom().getMonster() != null || combat.getMonsterHealth() > 0))
 			return true;
 		return false;
 	}
