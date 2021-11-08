@@ -1,6 +1,8 @@
 package puzzles;
 
-public interface MiniGame {
+import java.io.Serializable;
+
+public interface MiniGame extends Serializable {
 
     void start();
 

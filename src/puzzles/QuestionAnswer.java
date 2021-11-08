@@ -1,9 +1,13 @@
 package puzzles;
 
+import java.io.Serial;
+
 public class QuestionAnswer implements MiniGame {
 
     String correctAnswer;
     String userInput = "";
+    @Serial
+    private static final long serialVersionUID = 4820643763636391545L;
 
     @Override
     public void start() {

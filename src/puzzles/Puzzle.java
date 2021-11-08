@@ -1,6 +1,13 @@
 package puzzles;
 
-public class Puzzle {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Puzzle implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 4820643763636391545L;
+
     private int id;
     private String name;
     private String description;
