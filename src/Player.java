@@ -21,10 +21,12 @@ public class Player extends Entity implements Serializable{
 		roomID = room;
 	}
 	
+	//Jeremy Stiff
 	public int getPreviousRoom() {
 		return previousroomid;
 	}
 	
+	//Jeremy Stiff
 	public void setPreviousRoom(int previousroomid) {
 		this.previousroomid = previousroomid;
 	}

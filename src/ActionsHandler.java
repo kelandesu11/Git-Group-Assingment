@@ -112,12 +112,14 @@ public class ActionsHandler {
 		}
 	}
 
+	//Jeremy Stiff
 	private boolean isFightGoing() {
 		if (combat.getPlayerHealth() > 0 && (model.getPlayerRoom().getMonster() != null || combat.getMonsterHealth() > 0))
 			return true;
 		return false;
 	}
 
+	//Jeremy Stiff
 	private void combatPrompt() {
 		if (isFightGoing()) {
 			System.out.println("Player HP: " + combat.getPlayerHealth());
@@ -128,6 +130,7 @@ public class ActionsHandler {
 		}
 	}
 
+	//Jeremy Stiff
 	public void Exit() {
 		System.out.println("Would you like to save? y/n");
 		input = scan.nextLine().replaceAll("\n", "").toLowerCase();

@@ -20,6 +20,7 @@ public class Storage implements Serializable{
 		this.map = map;
 	}
 	
+	//Jeremy Stiff
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
@@ -44,6 +45,7 @@ public class Storage implements Serializable{
 		return map.get(id);
 	}
 	
+	//Jeremy Stiff
 	public HashMap<Integer, Rooms> getMap() {
 		return map;
 	}

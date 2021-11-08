@@ -53,7 +53,7 @@ public class CombatHandler {
 		return player.getHealth();
 	}
 	
-	//jeremy Stiff
+	//Jeremy Stiff
 	public int getMonsterHealth() {
 		return monster.getHealth();
 	}

@@ -94,10 +94,12 @@ public class Rooms implements Serializable{
 		this.visitedRoom = visitedRoom;
 	}
 	
+	//Jeremy Stiff
 	public Monsters getMonster() {
 		return monster;
 	}
 	
+	//Jeremy Stiff
 	public void addMonster(Monsters monster) {
 		this.monster = monster;
 	}
@@ -108,14 +110,11 @@ public class Rooms implements Serializable{
 		return getRoomID() + " " + getRoomName() + "\n" + getRoomDesc();
 	}
 
+	//Jeremy Stiff
 	public boolean hasMonster() {
 		if (monster != null)
 			return true;
 		return false;
-	}
-	
-	public void killMonster() {
-		monster = null;
 	}
 
 	public boolean hasPuzzle() {
