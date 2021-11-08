@@ -25,10 +25,14 @@ public class Storage implements Serializable{
 	}
 	
 
+
 	//Author: Kelan McNally
 	public void setItems(ArrayList<Items> items) {
 		this.items = items;
 	}
+
+
+	//Jeremy Stiff
 
 	public void setPlayer(Player player) {
 		this.player = player;
@@ -55,6 +59,7 @@ public class Storage implements Serializable{
 		return map.get(id);
 	}
 	
+
 	//Author: Kelan McNally
 	public Items getItem(Items item) {
 		return items.get(item.getItemID());
@@ -69,7 +74,9 @@ public class Storage implements Serializable{
 	public ArrayList<Items> getItems(){
 		return items;
 	}
-	
+
+	//Jeremy Stiff
+
 	public HashMap<Integer, Rooms> getMap() {
 		return map;
 

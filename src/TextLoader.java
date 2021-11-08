@@ -77,10 +77,15 @@ public class TextLoader implements Serializable {
 			map.put(temp.getRoomID(), temp);
 		}
 		map.get(1).setVisitedRoom(true);
+
 		
 		loadItemFile();
 		readItemFile();
 		
+
+		Monsters temp = new Monsters("Test", "This guy sucks", 1, 20, 1);
+		map.get(2).addMonster(temp);
+
 		return map;
 	}
 	

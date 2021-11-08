@@ -15,6 +15,8 @@ public class Rooms implements Serializable{
 	private int west = -1;
 	private boolean visitedRoom = false;
 	
+	private Monsters monster;
+	
 	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west) {
 		this.roomID = roomID;
 		this.roomName = roomName;
@@ -103,13 +105,26 @@ public ArrayList<Items> items = new ArrayList<Items>();
 		this.visitedRoom = visitedRoom;
 	}
 	
+	//Jeremy Stiff
+	public Monsters getMonster() {
+		return monster;
+	}
+	
+	//Jeremy Stiff
+	public void addMonster(Monsters monster) {
+		this.monster = monster;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return getRoomID() + " " + getRoomName() + "\n" + getRoomDesc();
 	}
 
+	//Jeremy Stiff
 	public boolean hasMonster() {
-		// TODO is monster here?
+		if (monster != null)
+			return true;
 		return false;
 	}
 

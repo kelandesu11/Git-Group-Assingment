@@ -13,18 +13,22 @@ public class Entity implements Serializable{
 		this.damage = damage;
 	}
 
+	//Jeremy Stiff
 	public int getHealth() {
 		return health;
 	}
 
+	//Jeremy Stiff
 	public void setHealth(int health) {
 		this.health = health;
 	}
 
+	//Jeremy Stiff
 	public int getDamage() {
 		return damage;
 	}
 
+	//Jeremy Stiff
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
