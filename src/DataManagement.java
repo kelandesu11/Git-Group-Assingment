@@ -8,9 +8,9 @@ public class DataManagement {
 
 	private Storage storage = new Storage();
 	private TextLoader loader = new TextLoader();
-	private CombatHandler combathandler;
 
-	public DataManagement() {}
+	public DataManagement() {
+	}
 
 	// Author: Jeremy Stiff
 	public void saveGame() {
@@ -28,19 +28,15 @@ public class DataManagement {
 	public void newGame() {
 		storage.setMap(loader.loadFile());
 	}
-	
-	public void startCombat(Player player, Monsters monster) {
-		combathandler = new CombatHandler(player, monster);
-	}
-	
-	public CombatHandler getCombatHandler() {
-		return combathandler;
-	}
-	
 
 	// Author: Jeremy Stiff
 	public Rooms getRoom(int id) {
 		return storage.getRoom(id);
+	}
+
+	// Jeremy Stiff
+	public Player getPlayer() {
+		return storage.getPlayer();
 	}
 
 	// Author: Jeremy Stiff
@@ -50,37 +46,49 @@ public class DataManagement {
 
 	// Author: Jeremy Stiff
 	public void movePlayerNorth() {
-		if (getPlayerRoom().getNorth() != -1) {
+		if (getPlayerRoom().getNorth() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getNorth() == getPlayer().getPreviousRoom())) {
+			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getNorth());
 			System.out.println(getPlayerRoom().toString());
-		} else
+		} else if (getPlayerRoom().getNorth() != -1 && getPlayerRoom().hasMonster()) 
+			System.out.println("You cannot move on until the monster has been defeated");
+		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
 
 	// Author: Jeremy Stiff
 	public void movePlayerSouth() {
-		if (getPlayerRoom().getSouth() != -1) {
+		if (getPlayerRoom().getSouth() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getSouth() == getPlayer().getPreviousRoom())) {
+			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getSouth());
 			System.out.println(getPlayerRoom().toString());
-		} else
+		} else if (getPlayerRoom().getSouth() != -1 && getPlayerRoom().hasMonster()) 
+			System.out.println("You cannot move on until the monster has been defeated");
+		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
 
 	// Author: Jeremy Stiff
 	public void movePlayerEast() {
-		if (getPlayerRoom().getEast() != -1) {
+		if (getPlayerRoom().getEast() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getEast() == getPlayer().getPreviousRoom())) {
+			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getEast());
 			System.out.println(getPlayerRoom().toString());
-		} else
+		} else if (getPlayerRoom().getEast() != -1 && getPlayerRoom().hasMonster()) 
+			System.out.println("You cannot move on until the monster has been defeated");
+		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
 
 	// Author: Jeremy Stiff
 	public void movePlayerWest() {
-		if (getPlayerRoom().getWest() != -1) {
+		if (getPlayerRoom().getWest() != -1 && (!getPlayerRoom().hasMonster() || getPlayerRoom().getWest() == getPlayer().getPreviousRoom())) {
+			storage.getPlayer().setPreviousRoom(getPlayerRoom().getRoomID());
 			storage.getPlayer().setPlayerLocation(getPlayerRoom().getWest());
 			System.out.println(getPlayerRoom().toString());
-		} else
+		} else if (getPlayerRoom().getWest() != -1 && getPlayerRoom().hasMonster()) 
+			System.out.println("You cannot move on until the monster has been defeated");
+		else
 			System.out.println("Ouch! You walk into a wall!");
 	}
 
@@ -115,22 +123,22 @@ public class DataManagement {
 
 		return links;
 	}
-	
-	//Author: Jeremy Stiff
+
+	// Author: Jeremy Stiff
 	private String getActions() {
 		String actions = "Your available actions are:";
-		
-		//TODO Code that gathers and returns actions similar to above method.
+
+		// TODO Code that gathers and returns actions similar to above method.
 		if (getPlayerRoom().hasMonster())
 			actions += " m or Monster";
 		if (getPlayerRoom().hasPuzzle())
 			actions += " p or Puzzle";
 		if (getPlayerRoom().hasItem())
 			actions += " i or Item";
-		
+
 		if (actions.equals("Your available actions are:"))
 			actions = "There is nothing to do here.";
-		
+
 		return actions;
 	}
 
