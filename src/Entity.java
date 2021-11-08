@@ -24,6 +24,10 @@ public class Entity implements Serializable{
 	}
 
 	//Jeremy Stiff
+	public void updateHealth(int health) {
+		this.health += health;
+	}
+
 	public int getDamage() {
 		return damage;
 	}

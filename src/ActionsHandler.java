@@ -1,3 +1,5 @@
+import puzzles.Puzzle;
+
 import java.util.Scanner;
 
 /*
@@ -20,10 +22,10 @@ public class ActionsHandler {
 			if (input.length() == 0)
 				continue;
 			Movement();
-			}
-
 		}
-	
+
+	}
+
 	//Jeremy Stiff
 	public void welcomeMessage() {
 		System.out.println("Welcome to the game. Your options are:\n1) New game\n2) Load game\n3) Exit");
@@ -54,10 +56,56 @@ public class ActionsHandler {
 			case "s", "south" -> model.movePlayerSouth();
 			case "e", "east" -> model.movePlayerEast();
 			case "w", "west" -> model.movePlayerWest();
+			case "p", "puzzle", "pe", "puzzle explore", "pi", "puzzle ignore" -> puzzleHandler(input); // SK
 			case "x", "exit" -> Exit();
 		}
 	}
-	
+
+	// SK
+	public void puzzleHandler(String input) {
+		switch (input) {
+			case "p", "puzzle", "ep", "explore puzzle" -> startPuzzle();
+			case "ip", "ignore puzzle" -> ignorePuzzle();
+		}
+	}
+
+	// SK
+	public void startPuzzle() {
+		if (model.getPlayerRoom().getPuzzle() != null) {
+			Puzzle currentPuzzle = model.getPlayerRoom().getPuzzle();
+			if (!currentPuzzle.isSolved()) {
+				if (currentPuzzle.getAttemptLeft() > 0) {
+					model.inspectPuzzle();
+					currentPuzzle.start();
+					System.out.println("Attempts: " + currentPuzzle.getAttemptLeft());
+					while (currentPuzzle.getAttemptLeft() > 0) {
+						String answer = scan.nextLine();
+						boolean correct = currentPuzzle.isCorrect(answer);
+						if (correct) {
+							System.out.println("You won!!");
+							// Increase the player health on solving the puzzle.
+							model.getPlayer().updateHealth(currentPuzzle.getHealthPoints());
+							model.getPlayerRoom().setPuzzle(null);
+							break;
+						}
+						currentPuzzle.decrementAttempt();
+					}
+				}
+			} else {
+				// if puzzle is already solved - nullify it
+				model.getPlayerRoom().setPuzzle(null);
+			}
+		}
+	}
+
+	// SK
+	public void ignorePuzzle() {
+		// Ignore the puzzle by nullifying it
+		if (model.getPlayerRoom().getPuzzle() != null) {
+			model.getPlayerRoom().setPuzzle(null);
+		}
+	}
+
 	public void Exit() {
 		System.out.println("Would you like to save? y/n");
 		input = scan.nextLine().replaceAll("\n", "").toLowerCase();
@@ -65,11 +113,10 @@ public class ActionsHandler {
 			model.saveGame();
 			scan.close();
 			System.exit(0);
-		} else if (input.equals("n")){
+		} else if (input.equals("n")) {
 			scan.close();
 			System.exit(0);
-		}
-		else
+		} else
 			gameLoop();
 	}
 }

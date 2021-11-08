@@ -1,0 +1,28 @@
+1
+Dice rolling
+Who rolls the most number will win.
+It drops money, 5G.
+2
+Hangman
+Fill out the missing words to win.
+It drops a strength potion 25%
+3
+Word Spell
+Player has to connect letters that provide for, to solve the puzzle
+It drops money 20G
+4
+Left and Right
+Players must make 3 turns consecutively correct with failure within 3 tries. After 3 tries the puzzle disappears.
+Health Potion 50%
+5
+Who game
+The puzzle will provide the description of a character, player has to guess the name
+It drops a strength potion 50%
+6
+The Riddles
+The riddle goes:”I am large as a castle, yet lighter than air. 100 men and their horses cannot move me. What am I” Answer: “The castle’s shadow”
+It drops a strength potion 100%
+7
+Treasure Chest
+10 treasure chests will appear, and the player will choose one of them. One contains a prize. 4 of them will reduce 10Hp. The rest are empty.
+Health Potion 100%
