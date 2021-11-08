@@ -19,8 +19,10 @@ public class CombatHandler {
 		if (monster.getHealth() > 0) {
 			System.out.println("The monster strikes back for " + monster.getDamage() + " damage!");
 			monsterAttack();
-		} else
+			
+		} else if (monster.getHealth() <= 0) {
 			System.out.println("Your blow defeats the monster!");
+		}
 	}
 	
 	//Author: Jeremy Stiff
@@ -54,4 +56,5 @@ public class CombatHandler {
 	public int getMonsterHealth() {
 		return monster.getHealth();
 	}
+	
 }
