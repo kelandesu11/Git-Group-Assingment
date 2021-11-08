@@ -8,6 +8,7 @@ public class Puzzles {
 	private String name;
 	private String description;
 	private int solution;
+	
 	public int getId() {
 		return id;
 	}

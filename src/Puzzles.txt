@@ -1,24 +1,28 @@
-0
-Rubric of Old
-An ancient cryptography is embedded into the door. Nine stones jut out of the wall in the pattern of a diamond, each with a strange symbol etched on its surface. From top to bottom the symbols are: A red sun, a yellow fish, a yellow bird, a blue sun, a purple moon, a green bird, a red hare, a green fish, and a purple hare.
-Simply press the symbol that is not repeated.(i.e. the purple moon)
 1
-Ancient Riddle
-I can never be stopped. I always end up the winner. I turn all to dust under my influence. Who am I?
-Time
+Dice rolling
+Who rolls the most number will win.
+It drops money, 5G.
 2
-Buff Statue
-You find a statue of a large, buff man with a grin on his face. He holds his bicep with one hand and stretches out his arm, with his other hand clenched halfway between open and a fist.
-Beat the statue at arm-wrestling.
+Hangman
+Fill out the missing words to win.
+It drops a strength potion 25%
 3
-Strange Symbol Game
-Two vertical lines are crossed by two horizontal lines forming squares. Their construction is inlaid gold in grey stone. When I approach, a magical force draws a circle onto one of the squares.
-Beat the game at tic-tac-toe.
+Word Spell
+Player has to connect letters that provide for, to solve the puzzle
+It drops money 20G
 4
-More you take
-The more you take the more you leave behind. What are they?
-Footsteps
+Left and Right
+Players must make 3 turns consecutively correct with failure within 3 tries. After 3 tries the puzzle disappears.
+Health Potion 50%
 5
-Howling
-Voiceless it cries and wingless it flutters, toothless it bites and mouthless it mutters. What is it?
-The wind
+Who game
+The puzzle will provide the description of a character, player has to guess the name
+It drops a strength potion 50%
+6
+The Riddles
+The riddle goes:”I am large as a castle, yet lighter than air. 100 men and their horses cannot move me. What am I” Answer: “The castle’s shadow”
+It drops a strength potion 100%
+7
+Treasure Chest
+10 treasure chests will appear, and the player will choose one of them. One contains a prize. 4 of them will reduce 10Hp. The rest are empty.
+Health Potion 100%

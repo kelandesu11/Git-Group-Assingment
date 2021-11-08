@@ -1,23 +1,51 @@
 1
-Skeleton
-An undead abomination that is animated by deceased spirits. Dusty bones clattering with a longsword in hand; 
+Vampire Hunter
+A monster that tries to bite the player.
+Damage-5
+Health-20
 2
-Large Spider
+Slime
+A monster with increased damage, It will deal more damage to the player,
+Damage-8
+Health-20
 3
-Humongous Wolf
-A great mound of grey fur covering powerful muscle.
+Werewolf
+A monster with increased health, but with Item 2 you deal more damage to the monster.
+Damage-4
+Health-20
 4
-Goblin
-Small, green, and weak humanoid creature
+BettleHuice
+A monster that when health points = 0 attacks one more time before finishing the battle
+Damage-3
+Health-10
 5
-Bladespine
-A porcupine looking giant monster that have metal blades all over th body. 
-6
-Poglider
-Sugar glider looking small monster that flies but shoots acidic spit from mouth that can burn human skin. I
-7
-Miniature Cyclops
-Massive to the average human, this cyclops must have been outcast from its clan. A single eye stares you down with hostile intent
-8
 Witch
-A woman thought to be able to cast spells or possess magical powers
+A monster that attacks don't intaility do damage to the player but overtime the player will take damage (potion effect)
+Damage-1 Damage overtime(1)
+Health-20
+6
+Boogeyman
+A monster that instills fear (which make the player miss 5% of attacks)
+Damage-5
+Health-20
+7
+Thanos
+A monster that deals massive Damage to the player in One attack (he only attacks once)
+Damage-10
+Health-20
+8
+Red Skull
+A monster that when is defeated he summons another clone with 1 Health Point
+Damage-2
+Health-40
+9
+Yellow Jacket
+A monster that has double health points but has their attacked halved
+Damage-2
+Health-40
+10
+Cow
+A monster that has 1 health point
+Damage-0.001
+Health-1
+
