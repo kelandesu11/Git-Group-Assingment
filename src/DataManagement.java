@@ -149,6 +149,13 @@ public class DataManagement {
 
     }
     
+    public void examineItem() {
+    	Items equippedItem = getPlayer().getEquippedItem();
+    	if(inv.contains(equippedItem)) {
+    		System.out.println(equippedItem.getItemDesc());
+    	}
+    }
+    
     public void heal() {
     	getPlayerRoom().getItems().forEach(item ->{
     	if(inv.contains(item)){

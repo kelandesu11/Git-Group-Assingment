@@ -70,6 +70,8 @@ public class ActionsHandler {
 			model.checkInv();
 		else if (input.equals("heal") || input.equals("h"))
 			model.heal();
+		else if (input.equals("examine"))
+			model.examineItem();
 	}
 
 	// Jeremy Stiff
