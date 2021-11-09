@@ -9,7 +9,7 @@ import java.util.HashMap;
  * Description: This class stores the HashMap and will retrieve data when needed.
  */
 
-public class Storage implements Serializable{
+public class Storage implements Serializable {
 
 	/**
 	 *
@@ -19,28 +19,6 @@ public class Storage implements Serializable{
 
 	private ArrayList<Items> items = new ArrayList<Items>(); //Author: Kelan McNally
 	private Player player = new Player(20, 2);
-
-
-	//Author: Jeremy Stiff
-	public void setMap(HashMap<Integer, Rooms> map) {
-		this.map = map;
-	}
-
-	
-
-
-	//Author: Kelan McNally
-	public void setItems(ArrayList<Items> items) {
-		this.items = items;
-	}
-
-
-
-	//Jeremy Stiff
-
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
 
 	//Author: Jeremy Stiff
 	public Rooms currentRoom() {
@@ -53,9 +31,16 @@ public class Storage implements Serializable{
 		return map.get(room.getRoomID());
 	}
 
+
+	//Jeremy Stiff
+
 	// Author: Jeremy Stiff
 	public Player getPlayer() {
 		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
 	}
 
 	//Author: Jeremy Stiff
@@ -63,29 +48,37 @@ public class Storage implements Serializable{
 		return map.get(id);
 	}
 
-	
-
 	//Author: Kelan McNally
 	public Items getItem(Items item) {
 		return items.get(item.getItemID());
 	}
-	
+
 	//Author: Kelan McNally
 	public Items getItem(int id) {
 		return items.get(id);
 	}
-	
+
 	//Author: Kelan McNally
-	public ArrayList<Items> getItems(){
+	public ArrayList<Items> getItems() {
 		return items;
+	}
+
+	//Author: Kelan McNally
+	public void setItems(ArrayList<Items> items) {
+		this.items = items;
+	}
+
+	public HashMap<Integer, Rooms> getMap() {
+		return map;
+
 	}
 
 
 	//Jeremy Stiff
 
-	public HashMap<Integer, Rooms> getMap() {
-		return map;
-
+	//Author: Jeremy Stiff
+	public void setMap(HashMap<Integer, Rooms> map) {
+		this.map = map;
 	}
 
 	public void assignPuzzle() {

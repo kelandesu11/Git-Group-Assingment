@@ -4,10 +4,10 @@ import java.io.Serial;
 
 public class QuestionAnswer implements MiniGame {
 
-    String correctAnswer;
-    String userInput = "";
     @Serial
     private static final long serialVersionUID = 4820643763636391545L;
+    String correctAnswer;
+    String userInput = "";
 
     @Override
     public void start() {

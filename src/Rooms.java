@@ -3,11 +3,13 @@ import puzzles.Puzzle;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Rooms implements Serializable{
+public class Rooms implements Serializable {
 	/**
 	 * Author: Kelan McNally
 	 */
 	private static final long serialVersionUID = 638851069751677125L;
+	//Author: Kelan McNally
+	public ArrayList<Items> items = new ArrayList<Items>();
 	private int roomID = -1;
 	private String roomName = "Empty";
 	private String roomDesc = "This is an empty Rooms class";
@@ -16,10 +18,9 @@ public class Rooms implements Serializable{
 	private int south = -1;
 	private int west = -1;
 	private boolean visitedRoom = false;
-
 	private Puzzle puzzle = null;
-
 	private Monsters monster;
+
 
 	public Rooms(int roomID, String roomName, String roomDesc, int north, int east, int south, int west) {
 		this.roomID = roomID;
@@ -31,22 +32,16 @@ public class Rooms implements Serializable{
 		this.west = west;
 	}
 
-		
-	//Author: Kelan McNally
-public ArrayList<Items> items = new ArrayList<Items>();
-	
-	public void addItem(Items temp) {
-	items.add(temp);
-	}
-
-	public ArrayList<Items> getItems(){
-		return items;
-	}
-
-
-
 	public Rooms() {
 
+	}
+
+	public void addItem(Items temp) {
+		items.add(temp);
+	}
+
+	public ArrayList<Items> getItems() {
+		return items;
 	}
 
 	public int getRoomID() {
@@ -147,9 +142,7 @@ public ArrayList<Items> items = new ArrayList<Items>();
 
 	//Jeremy Stiff
 	public boolean hasMonster() {
-		if (monster != null)
-			return true;
-		return false;
+		return monster != null;
 	}
 
 	public boolean hasPuzzle() {
@@ -158,19 +151,12 @@ public ArrayList<Items> items = new ArrayList<Items>();
 
 	public boolean hasItem() {
 		// TODO is item here?
-		if(items.isEmpty()) {
-			
-		return false;
-		}
-		else {
-			return true;
-		}
+		return !items.isEmpty();
 	}
-	
+
 	public void displayItems() {
 		System.out.println(items.toString());
 	}
 
 
-	
 }

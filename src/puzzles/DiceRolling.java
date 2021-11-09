@@ -5,11 +5,9 @@ import java.util.Random;
 
 public class DiceRolling implements MiniGame {
 
-    String correctAnswer = String.valueOf(rollDice());
-
     @Serial
     private static final long serialVersionUID = 4820643763636391545L;
-
+    String correctAnswer = String.valueOf(rollDice());
 
     @Override
     public void start() {

@@ -11,8 +11,8 @@ public class ActionsHandler {
 
 	private final Scanner scan = new Scanner(System.in);
 	private final DataManagement model = new DataManagement();
-	private CombatHandler combat;
 	String input;
+	private CombatHandler combat;
 
 	// Jeremy Stiff
 	public void gameLoop() {
@@ -53,7 +53,7 @@ public class ActionsHandler {
 	public void loadGame() {
 		model.loadSave();
 	}
-	
+
 	//Author: Kelan McNally
 	public void itemActions() {
 		if (input.equals("i") || input.equals("items"))
@@ -72,7 +72,7 @@ public class ActionsHandler {
 	private void monsterOptions() {
 		System.out.println("1) Attack\n2) Examine\n3) Ignore");
 		input = scan.nextLine().replaceAll("\n", "");
-		
+
 		if (input.equals("1"))
 			combatStart();
 		else if (input.equals("2")) {
@@ -113,9 +113,7 @@ public class ActionsHandler {
 	}
 
 	private boolean isFightGoing() {
-		if (combat.getPlayerHealth() > 0 && (model.getPlayerRoom().getMonster() != null || combat.getMonsterHealth() > 0))
-			return true;
-		return false;
+		return combat.getPlayerHealth() > 0 && (model.getPlayerRoom().getMonster() != null || combat.getMonsterHealth() > 0);
 	}
 
 	private void combatPrompt() {

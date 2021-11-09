@@ -10,7 +10,7 @@ public class DataManagement {
 
     ArrayList<Items> inv = new ArrayList<>();
     private Storage storage = new Storage();
-    private TextLoader loader = new TextLoader();
+    private final TextLoader loader = new TextLoader();
 
     public DataManagement() {
     }

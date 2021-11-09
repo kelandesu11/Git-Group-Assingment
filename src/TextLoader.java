@@ -11,10 +11,11 @@ import java.util.Scanner;
 public class TextLoader implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
+	@Serial
 	private static final long serialVersionUID = 8578811013575599820L;
-	private Scanner scanin = new Scanner(System.in);
+	private final Scanner scanin = new Scanner(System.in);
 	private HashMap<Integer, Rooms> map;
 	private Scanner scanfile;
 	private File file;
@@ -45,8 +46,7 @@ public class TextLoader implements Serializable {
 		}
 		return readFile();
 	}
-	
-	
+
 
 	/*
 	 * Author: Jeremy Stiff This method reads information on a correctly formatted
@@ -82,7 +82,7 @@ public class TextLoader implements Serializable {
 
 		return map;
 	}
-	
+
 	/**
 	 * Author: Kelan McNally
 	 */
@@ -101,9 +101,9 @@ public class TextLoader implements Serializable {
 				loadItemFile();
 			}
 		}
-		
+
 	}
-	
+
 	/**
 	 * Author: Kelan McNally
 	 */
@@ -122,9 +122,9 @@ public class TextLoader implements Serializable {
 			}
 
 		}
-		
+
 	}
-		
+
 	// Author: Jeremy Stiff
 	public void writeStorage(Storage storage) {
 		try {
@@ -138,7 +138,7 @@ public class TextLoader implements Serializable {
 			e.printStackTrace();
 		}
 	}
-	
+
 	//Author: Jeremy Stiff
 	public Storage loadSave() {
 		try {
@@ -155,7 +155,7 @@ public class TextLoader implements Serializable {
 				ObjectInputStream objin = new ObjectInputStream(in);
 				Storage out = (Storage) objin.readObject();
 				objin.close();
-				
+
 				return out;
 			} catch (FileNotFoundException e1) {
 				System.out.println("Incorrect path");

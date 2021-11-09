@@ -5,11 +5,10 @@ public class Player extends Entity implements Serializable {
 	 * Author: Kelan McNally
 	 */
 	private static final long serialVersionUID = -3815529920572909198L;
+	Rooms room = new Rooms();
 	private int roomID = 1;
 	private int previousroomid = -1;
 	private int health, damage;
-	Rooms room = new Rooms();
-
 	private Items equippedItem = null;
 
 	public Player(int health, int damage) {
