@@ -28,6 +28,10 @@ public class Entity implements Serializable{
 		this.health += health;
 	}
 
+	public void decreaseHealth(int health) {
+		this.health -= health;
+	}
+
 	public int getDamage() {
 		return damage;
 	}
@@ -36,5 +40,13 @@ public class Entity implements Serializable{
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
-	
+
+	public void updateDamage(int damage) {
+		this.damage += damage;
+	}
+
+	public void decreaseDamage(int damage) {
+		this.damage -= damage;
+	}
+
 }
