@@ -56,16 +56,13 @@ public class ActionsHandler {
 
 	//Author: Kelan McNally
 	public void itemActions() {
-		if (input.equals("i") || input.equals("items"))
-			model.getPlayerRoom().displayItems();
-		else if (input.equals("p") || input.equals("pickup"))
-			model.pickupItem();
-		else if (input.equals("d") || input.equals("drop"))
-			model.dropItem();
-		else if (input.equals("e") || input.equals("equip"))
-			model.equipItem();
-		else if (input.equals("u") || input.equals("unequip"))
-			model.unequipItem();
+		switch (input) {
+			case "i", "items" -> model.getPlayerRoom().displayItems();
+			case "p", "pickup" -> model.pickupItem();
+			case "d", "drop" -> model.dropItem();
+			case "e", "equip" -> model.equipItem();
+			case "u", "unequip" -> model.unequipItem();
+		}
 	}
 
 	// Jeremy Stiff
@@ -73,15 +70,15 @@ public class ActionsHandler {
 		System.out.println("1) Attack\n2) Examine\n3) Ignore");
 		input = scan.nextLine().replaceAll("\n", "");
 
-		if (input.equals("1"))
-			combatStart();
-		else if (input.equals("2")) {
-			System.out.println(model.getPlayerRoom().getMonster().getDescription());
-			monsterOptions();
-		} else if (input.equals("3"))
-			System.out.println("You ignore the monster, but cannot move on");
-		else
-			monsterOptions();
+		switch (input) {
+			case "1" -> combatStart();
+			case "2" -> {
+				System.out.println(model.getPlayerRoom().getMonster().getDescription());
+				monsterOptions();
+			}
+			case "3" -> System.out.println("You ignore the monster, but cannot move on");
+			default -> monsterOptions();
+		}
 	}
 
 	// Jeremy Stiff
@@ -136,6 +133,11 @@ public class ActionsHandler {
 			case "w", "west" -> model.movePlayerWest();
 			case "p", "puzzle", "pe", "puzzle explore", "pi", "puzzle ignore" -> puzzleHandler(input); // SK
 			case "x", "exit" -> Exit();
+			case "i", "items" -> model.getPlayerRoom().displayItems();
+			case "pick", "pickup" -> model.pickupItem();
+			case "d", "drop" -> model.dropItem();
+			case "eq", "equip" -> model.equipItem();
+			case "u", "unequip" -> model.unequipItem();
 		}
 
 	}
