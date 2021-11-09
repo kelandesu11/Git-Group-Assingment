@@ -29,6 +29,7 @@ public class ActionsHandler {
 			// Things a player can do in a room go here.
 			puzzleHandler();
 			itemActions();
+			equipItemHandler();
 
 		}
 
@@ -64,9 +65,28 @@ public class ActionsHandler {
 			case "i", "items" -> model.getPlayerRoom().displayItems();
 			case "pick", "pickup" -> model.pickupItem();
 			case "d", "drop" -> model.dropItem();
-			case "eq", "equip" -> model.equipItem();
 			case "u", "unequip" -> model.unequipItem();
+			case "st", "stat" -> statHandler();
+			case "inv", "inventory" -> System.out.println("Inventory:\n" + model.getInventory());
 		}
+	}
+
+	public void equipItemHandler() {
+		if (input.startsWith("equip")) {
+			String[] item_name = input.split("\\s+", 2);
+			if (item_name.length == 2) {
+				model.equipItem(item_name[1]);
+			}
+		}
+	}
+
+	public void statHandler() {
+		System.out.println("\n=====YOUR STAT=====");
+		System.out.println("Inventory: " + model.getInventory());
+		System.out.println("Equipped with: " + model.getPlayer().getEquippedItem());
+		System.out.println("Health: " + model.getPlayer().getHealth());
+		System.out.println("Damage Points: " + model.getPlayer().getDamage());
+		System.out.println("=====**=====\n");
 	}
 
 	// Jeremy Stiff

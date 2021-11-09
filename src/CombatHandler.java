@@ -48,12 +48,12 @@ public class CombatHandler {
 	}
 
 	//Jeremy Stiff
-	public int getPlayerHealth() {
+	public double getPlayerHealth() {
 		return player.getHealth();
 	}
 
 	//Jeremy Stiff
-	public int getMonsterHealth() {
+	public double getMonsterHealth() {
 		return monster.getHealth();
 	}
 

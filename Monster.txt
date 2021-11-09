@@ -29,7 +29,7 @@ A monster that when health points = 0 attacks one more time before finishing the
 5
 Witch
 A monster that attacks don't intaility do damage to the player but overtime the player will take damage (potion effect)
-1 Damage overtime(1)
+1
 20
 12
 

@@ -74,6 +74,9 @@ public class TextLoader implements Serializable {
 		loadItemFile();
 		readItemFile();
 
+		loadMonsterFile();
+		readMonsterFile();
+
 		return map;
 	}
 
@@ -81,46 +84,6 @@ public class TextLoader implements Serializable {
 	 * Author: Kelan McNally
 	 */
 	public void loadItemFile() {
-
-		try {
-			file = new File("Items.txt");
-			scanfile = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			System.out.println("Enter the Items.txt file path");
-			try {
-				file = new File(scanin.nextLine());
-				scanfile = new Scanner(file);
-			} catch (FileNotFoundException e1) {
-				System.out.println("Incorrect path");
-				loadItemFile();
-			}
-		}
-
-	}
-
-	public void readMonsterFile() {
-
-		while (scanfile.hasNext()) {
-			String line = scanfile.nextLine();
-			if (!line.isEmpty()) {
-				Monster monster = new Monster();
-				monster.setId(Integer.parseInt(line));
-				monster.setName(scanfile.nextLine());
-				monster.setDescription(scanfile.nextLine());
-				monster.setHealth(Integer.parseInt(scanfile.nextLine()));
-				monster.setDamage(Integer.parseInt(scanfile.nextLine()));
-				int roomID = Integer.parseInt(scanfile.nextLine());
-				if (map.get(roomID) != null) {
-					map.get(roomID).addMonster(monster);
-				}
-			}
-
-		}
-
-	}
-
-
-	public void loadMonsterFile() {
 
 		try {
 			file = new File("Items.txt");
@@ -158,6 +121,47 @@ public class TextLoader implements Serializable {
 		}
 
 	}
+
+	public void readMonsterFile() {
+
+		while (scanfile.hasNext()) {
+			String line = scanfile.nextLine();
+			if (!line.isEmpty()) {
+				Monster monster = new Monster();
+				monster.setId(Integer.parseInt(line));
+				monster.setName(scanfile.nextLine());
+				monster.setDescription(scanfile.nextLine());
+				monster.setHealth(Double.parseDouble(scanfile.nextLine()));
+				monster.setDamage(Double.parseDouble(scanfile.nextLine()));
+				int roomID = Integer.parseInt(scanfile.nextLine());
+				if (map.get(roomID) != null) {
+					map.get(roomID).addMonster(monster);
+				}
+			}
+		}
+
+	}
+
+
+	public void loadMonsterFile() {
+
+		try {
+			file = new File("Monster.txt");
+			scanfile = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Enter the Monsters.txt file path");
+			try {
+				file = new File(scanin.nextLine());
+				scanfile = new Scanner(file);
+				readMonsterFile();
+			} catch (FileNotFoundException e1) {
+				System.out.println("Incorrect path");
+				loadMonsterFile();
+			}
+		}
+
+	}
+
 
 	// Author: Jeremy Stiff
 	public void writeStorage(Storage storage) {
