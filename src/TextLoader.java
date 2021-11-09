@@ -61,7 +61,7 @@ public class TextLoader implements Serializable {
 			temp.setRoomID(scanfile.nextInt());
 			scanfile.nextLine();
 			temp.setRoomName(scanfile.nextLine());
-			temp.setRoomDesc(scanfile.nextLine());
+			temp.setRoomDesc(scanfile.nextLine().replaceAll("\n", ""));
 			temp.setNorth(scanfile.nextInt());
 			temp.setSouth(scanfile.nextInt());
 			temp.setEast(scanfile.nextInt());
