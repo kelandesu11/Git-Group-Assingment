@@ -26,6 +26,9 @@ public class ActionsHandler {
 			if (model.getPlayerRoom().hasMonster() && (input.equals("m") || input.equals("monster")))
 				monsterOptions();
 			// Things a player can do in a room go here.
+			puzzleHandler();
+			itemActions();
+
 		}
 
 	}
@@ -58,9 +61,9 @@ public class ActionsHandler {
 	public void itemActions() {
 		switch (input) {
 			case "i", "items" -> model.getPlayerRoom().displayItems();
-			case "p", "pickup" -> model.pickupItem();
+			case "pick", "pickup" -> model.pickupItem();
 			case "d", "drop" -> model.dropItem();
-			case "e", "equip" -> model.equipItem();
+			case "eq", "equip" -> model.equipItem();
 			case "u", "unequip" -> model.unequipItem();
 		}
 	}
@@ -131,19 +134,13 @@ public class ActionsHandler {
 			case "s", "south" -> model.movePlayerSouth();
 			case "e", "east" -> model.movePlayerEast();
 			case "w", "west" -> model.movePlayerWest();
-			case "p", "puzzle", "pe", "puzzle explore", "pi", "puzzle ignore" -> puzzleHandler(input); // SK
 			case "x", "exit" -> Exit();
-			case "i", "items" -> model.getPlayerRoom().displayItems();
-			case "pick", "pickup" -> model.pickupItem();
-			case "d", "drop" -> model.dropItem();
-			case "eq", "equip" -> model.equipItem();
-			case "u", "unequip" -> model.unequipItem();
 		}
 
 	}
 
 	// SK
-	public void puzzleHandler(String input) {
+	public void puzzleHandler() {
 		switch (input) {
 			case "p", "puzzle", "ep", "explore puzzle" -> startPuzzle();
 			case "ip", "ignore puzzle" -> ignorePuzzle();
