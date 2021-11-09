@@ -4,9 +4,9 @@
 public class CombatHandler {
 
 	private final Player player;
-	private final Monsters monster;
+	private final Monster monster;
 
-	public CombatHandler(Player player, Monsters monster) {
+	public CombatHandler(Player player, Monster monster) {
 		this.player = player;
 		this.monster = monster;
 	}

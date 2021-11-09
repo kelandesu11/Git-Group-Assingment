@@ -1,5 +1,6 @@
 import puzzles.PuzzleLoader;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,20 +15,21 @@ public class Storage implements Serializable {
 	/**
 	 *
 	 */
+	@Serial
 	private static final long serialVersionUID = 5761208788754196741L;
-	private HashMap<Integer, Rooms> map = new HashMap<Integer, Rooms>();
+	private HashMap<Integer, Room> map = new HashMap<Integer, Room>();
 
-	private ArrayList<Items> items = new ArrayList<Items>(); //Author: Kelan McNally
+	private ArrayList<Item> items = new ArrayList<Item>(); //Author: Kelan McNally
 	private Player player = new Player(20, 2);
 
 	//Author: Jeremy Stiff
-	public Rooms currentRoom() {
+	public Room currentRoom() {
 		return getRoom(player.getPlayerLocation());
 
 	}
 
 	//Author: Jeremy Stiff
-	public Rooms getRoom(Rooms room) {
+	public Room getRoom(Room room) {
 		return map.get(room.getRoomID());
 	}
 
@@ -44,31 +46,31 @@ public class Storage implements Serializable {
 	}
 
 	//Author: Jeremy Stiff
-	public Rooms getRoom(int id) {
+	public Room getRoom(int id) {
 		return map.get(id);
 	}
 
 	//Author: Kelan McNally
-	public Items getItem(Items item) {
-		return items.get(item.getItemID());
+	public Item getItem(Item item) {
+		return items.get(item.getId());
 	}
 
 	//Author: Kelan McNally
-	public Items getItem(int id) {
+	public Item getItem(int id) {
 		return items.get(id);
 	}
 
 	//Author: Kelan McNally
-	public ArrayList<Items> getItems() {
+	public ArrayList<Item> getItems() {
 		return items;
 	}
 
 	//Author: Kelan McNally
-	public void setItems(ArrayList<Items> items) {
+	public void setItems(ArrayList<Item> items) {
 		this.items = items;
 	}
 
-	public HashMap<Integer, Rooms> getMap() {
+	public HashMap<Integer, Room> getMap() {
 		return map;
 
 	}
@@ -77,14 +79,14 @@ public class Storage implements Serializable {
 	//Jeremy Stiff
 
 	//Author: Jeremy Stiff
-	public void setMap(HashMap<Integer, Rooms> map) {
+	public void setMap(HashMap<Integer, Room> map) {
 		this.map = map;
 	}
 
 	public void assignPuzzle() {
 		PuzzleLoader puzzleLoader = new PuzzleLoader();
 		puzzleLoader.loadFile().forEach((key, value) -> {
-			Rooms room = this.getRoom(key);
+			Room room = this.getRoom(key);
 			if (room != null) {
 				room.setPuzzle(value);
 			}

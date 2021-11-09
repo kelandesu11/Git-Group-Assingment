@@ -16,7 +16,7 @@ public class TextLoader implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 8578811013575599820L;
 	private final Scanner scanin = new Scanner(System.in);
-	private HashMap<Integer, Rooms> map;
+	private HashMap<Integer, Room> map;
 	private Scanner scanfile;
 	private File file;
 
@@ -29,7 +29,7 @@ public class TextLoader implements Serializable {
 	 * not found it prompts the user for a file path. The file path is used to
 	 * create a file Object and Scanner for the file.
 	 */
-	public HashMap<Integer, Rooms> loadFile() {
+	public HashMap<Integer, Room> loadFile() {
 
 		try {
 			file = new File("Room.txt");
@@ -53,13 +53,13 @@ public class TextLoader implements Serializable {
 	 * file into the HashMap. The correct format is as follows: ID Name Description
 	 * North connection East connection South connection West connection
 	 */
-	private HashMap<Integer, Rooms> readFile() {
-		map = new HashMap<Integer, Rooms>();
+	private HashMap<Integer, Room> readFile() {
+		map = new HashMap<Integer, Room>();
 
 		while (scanfile.hasNextLine()) {
 			String line = scanfile.nextLine();
 			if (!line.isEmpty()) {
-				Rooms temp = new Rooms();
+				Room temp = new Room();
 				temp.setRoomID(Integer.parseInt(line));
 				temp.setRoomName(scanfile.nextLine());
 				temp.setRoomDesc(scanfile.nextLine());
@@ -75,10 +75,6 @@ public class TextLoader implements Serializable {
 
 		loadItemFile();
 		readItemFile();
-
-
-		Monsters temp = new Monsters("Test", "This guy sucks", 1, 20, 1);
-		map.get(2).addMonster(temp);
 
 		return map;
 	}
@@ -104,21 +100,61 @@ public class TextLoader implements Serializable {
 
 	}
 
+	public void readMonsterFile() {
+
+		while (scanfile.hasNext()) {
+			String line = scanfile.nextLine();
+			if (!line.isEmpty()) {
+				Monster monster = new Monster();
+				monster.setId(Integer.parseInt(line));
+				monster.setName(scanfile.nextLine());
+				monster.setDescription(scanfile.nextLine());
+				monster.setHealth(Integer.parseInt(scanfile.nextLine()));
+				monster.setDamage(Integer.parseInt(scanfile.nextLine()));
+				int roomID = Integer.parseInt(scanfile.nextLine());
+				if (map.get(roomID) != null) {
+					map.get(roomID).addMonster(monster);
+				}
+			}
+
+		}
+
+	}
+
+
+	public void loadMonsterFile() {
+
+		try {
+			file = new File("Items.txt");
+			scanfile = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Enter the Items.txt file path");
+			try {
+				file = new File(scanin.nextLine());
+				scanfile = new Scanner(file);
+			} catch (FileNotFoundException e1) {
+				System.out.println("Incorrect path");
+				loadItemFile();
+			}
+		}
+
+	}
+
 	/**
 	 * Author: Kelan McNally
 	 */
 	public void readItemFile() {
 
 		while (scanfile.hasNext()) {
-			Items item = new Items();
-			item.setItemID(scanfile.nextInt());
+			Item item = new Item();
+			item.setId(scanfile.nextInt());
 			scanfile.nextLine();
-			item.setItemName(scanfile.nextLine());
-			item.setItemDesc(scanfile.nextLine());
-			item.setItemEffect(scanfile.nextInt());
-			item.setItemLocation(scanfile.nextInt());
-			if (map.get(item.getItemLocation()) != null) {
-				map.get(item.getItemLocation()).addItem(item);
+			item.setName(scanfile.nextLine());
+			item.setDescription(scanfile.nextLine());
+			item.setDamage(scanfile.nextInt());
+			item.setRoomID(scanfile.nextInt());
+			if (map.get(item.getRoomID()) != null) {
+				map.get(item.getRoomID()).addItem(item);
 			}
 
 		}

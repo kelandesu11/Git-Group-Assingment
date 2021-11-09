@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class DataManagement {
 
-    ArrayList<Items> inv = new ArrayList<>();
+    private ArrayList<Item> inventory = new ArrayList<>();
     private Storage storage = new Storage();
     private final TextLoader loader = new TextLoader();
 
@@ -34,7 +34,7 @@ public class DataManagement {
     }
 
     // Author: Jeremy Stiff
-    public Rooms getRoom(int id) {
+    public Room getRoom(int id) {
         return storage.getRoom(id);
     }
 
@@ -44,7 +44,7 @@ public class DataManagement {
     }
 
     // Author: Jeremy Stiff
-    public Rooms getPlayerRoom() {
+    public Room getPlayerRoom() {
         return storage.currentRoom();
     }
 
@@ -103,9 +103,9 @@ public class DataManagement {
     //Author: Kelan McNally
     public void pickupItem() {
         // Only can pick up one item at a time.
-        Items firstItem = getPlayerRoom().getItems().get(0);
+        Item firstItem = getPlayerRoom().getItems().get(0);
         if (firstItem != null) {
-            inv.add(firstItem);
+            inventory.add(firstItem);
             System.out.println("You picked up the item!");
         }
 
@@ -114,10 +114,10 @@ public class DataManagement {
     //Author: Kelan McNally
     public void dropItem() {
         System.out.println("You dropped the item!");
-        Items equippedItem = getPlayer().getEquippedItem();
+        Item equippedItem = getPlayer().getEquippedItem();
         if (equippedItem != null) {
             getPlayerRoom().getItems().add(equippedItem);
-            equippedItem.setItemLocation(getPlayerRoom().getRoomID());
+            equippedItem.setRoomID(getPlayerRoom().getRoomID());
         }
     }
 
@@ -125,10 +125,10 @@ public class DataManagement {
     public void equipItem() {
         // TODO this need to pass an item name as the param to equip that one item
         getPlayerRoom().getItems().forEach(item -> {
-            if (inv.contains(item)) {
+            if (inventory.contains(item)) {
                 System.out.println("You equipped the item!");
-                getPlayer().updateHealth(item.getItemEffect());
-                getPlayer().updateDamage(item.getItemEffect()); //TODO: change it to item damage points.
+                getPlayer().updateHealth(item.getDamage());
+                getPlayer().updateDamage(item.getDamage()); //TODO: change it to item damage points.
             }
         });
 
@@ -144,14 +144,14 @@ public class DataManagement {
 
     //Author: Kelan McNally
     public void unequipItem() {
-        Items equippedItem = getPlayer().getEquippedItem();
+        Item equippedItem = getPlayer().getEquippedItem();
         if (equippedItem != null) {
             if (getPlayer().getHealth() > 20) {
                 System.out.println("You unequipped the item");
-                getPlayer().decreaseHealth(equippedItem.getItemEffect());
+                getPlayer().decreaseHealth(equippedItem.getDamage());
             } else if (getPlayer().getDamage() > 2) {
                 System.out.println("You unequipped the item");
-                getPlayer().decreaseDamage(equippedItem.getItemEffect()); // TODO items needs damage points
+                getPlayer().decreaseDamage(equippedItem.getDamage()); // TODO items needs damage points
             }
         }
 
@@ -217,6 +217,14 @@ public class DataManagement {
     // Author: Sanju
     public void inspectPuzzle() {
         System.out.println(getPlayerRoom().getPuzzle().prompt());
+    }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<Item> inventory) {
+        this.inventory = inventory;
     }
 
     @Override

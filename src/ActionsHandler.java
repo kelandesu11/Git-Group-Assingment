@@ -23,8 +23,9 @@ public class ActionsHandler {
 			if (input.length() == 0)
 				continue;
 			Movement();
-			if (model.getPlayerRoom().hasMonster() && (input.equals("m") || input.equals("monster")))
+			if (model.getPlayerRoom().hasMonster() && (input.equals("m") || input.equals("monster"))) {
 				monsterOptions();
+			}
 			// Things a player can do in a room go here.
 			puzzleHandler();
 			itemActions();
@@ -99,16 +100,15 @@ public class ActionsHandler {
 			if (input.equals("1"))
 				combat.attackAction();
 			else if (input.equals("2")) {
-				// combat.playerInventory();
-				// TODO: Implement player inventory and related features.
+				System.out.println("Inventory:\n" + model.getInventory());
 			}
 			if (combat.getPlayerHealth() <= 0) {
-				// TODO Player defeat
+				promptReset();
 			}
 			if (combat.getMonsterHealth() <= 0) {
 				model.getPlayerRoom().addMonster(null);
-			} else
-				continue;
+			} else {
+			}
 		}
 	}
 
@@ -196,5 +196,19 @@ public class ActionsHandler {
 			System.exit(0);
 		} else
 			gameLoop();
+	}
+
+	public void promptReset() {
+		System.out.println("Would you like to restart a new game? y/n");
+		input = scan.nextLine().replaceAll("\n", "").toLowerCase();
+		if (input.equals("y")) {
+			newGame();
+		} else if (input.equals("n")) {
+			scan.close();
+			System.exit(0);
+		} else {
+			promptReset();
+		}
+
 	}
 }

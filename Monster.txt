@@ -1,51 +1,70 @@
 1
 Vampire Hunter
 A monster that tries to bite the player.
-Damage-5
-Health-20
+5
+20
+2
+
 2
 Slime
 A monster with increased damage, It will deal more damage to the player,
-Damage-8
-Health-20
+8
+20
+4
+
 3
 Werewolf
 A monster with increased health, but with Item 2 you deal more damage to the monster.
-Damage-4
-Health-20
+4
+20
+6
+
 4
 BettleHuice
 A monster that when health points = 0 attacks one more time before finishing the battle
-Damage-3
-Health-10
+3
+10
+8
+
 5
 Witch
 A monster that attacks don't intaility do damage to the player but overtime the player will take damage (potion effect)
-Damage-1 Damage overtime(1)
-Health-20
+1 Damage overtime(1)
+20
+12
+
 6
 Boogeyman
 A monster that instills fear (which make the player miss 5% of attacks)
-Damage-5
-Health-20
+5
+20
+14
+
 7
 Thanos
 A monster that deals massive Damage to the player in One attack (he only attacks once)
-Damage-10
-Health-20
+10
+20
+16
+
 8
 Red Skull
 A monster that when is defeated he summons another clone with 1 Health Point
-Damage-2
-Health-40
+2
+40
+17
+
 9
 Yellow Jacket
 A monster that has double health points but has their attacked halved
-Damage-2
-Health-40
+2
+40
+19
+
 10
 Cow
 A monster that has 1 health point
-Damage-0.001
-Health-1
+0.001
+1
+18
 
