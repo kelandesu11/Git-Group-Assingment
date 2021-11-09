@@ -1,5 +1,13 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /*
@@ -107,18 +115,18 @@ public class TextLoader implements Serializable {
 	 */
 	public void readItemFile() {
 
-		while (scanfile.hasNextLine()) {
-//			System.out.println(scanfile.nextLine());
+		while (scanfile.hasNext()) {
 			Items item = new Items();
-			item.setItemID(Integer.parseInt(scanfile.nextLine()));
+			item.setItemID(scanfile.nextInt());
+			scanfile.nextLine();
 			item.setItemName(scanfile.nextLine());
 			item.setItemDesc(scanfile.nextLine());
-			item.setItemEffect(Integer.parseInt(scanfile.nextLine()));
-			item.setItemLocation(Integer.parseInt(scanfile.nextLine()));
+			item.setItemEffect(scanfile.nextInt());
+			item.setItemLocation(scanfile.nextInt());
 			map.get(1).addItem(item);
+			
+			
 		}
-		
-		
 		
 	}
 		

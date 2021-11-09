@@ -100,29 +100,37 @@ public class DataManagement {
 	//Author: Kelan McNally
 	public void pickupItem() {
 		System.out.println("You picked up the item!");
-		//add item to inventory array
+		inv.add(getPlayerRoom().getItems());
 	}
 	
 	//Author: Kelan McNally
 	public void dropItem() {
 		System.out.println("You dropped the item!");
-		//remove item from inventory array
-		//change itemLocation to new room
+		inv.remove(getPlayerRoom().getItems());
+		getPlayerRoom().getItems().setItemLocation(getPlayerRoom());
 	}
 	
 	//Author: Kelan McNally
 	public void equipItem() {
-		//check if player has item in inventory array
+		if(inv.contains(getPlayerRoom().getItems())) {
 		System.out.println("You equipped the item!");
-		//else{
-		//System.out.println("You don't have that item!");
-	//}
+		getPlayer().setHealth(getPlayer().getHealth() + getPlayerRoom().getItems());
+		else{
+		getPlayer().setDamage(getPlayer().getDamage() + getPlayerRoom().getItems());
 	}
-	
+	}
+}
 	//Author: Kelan McNally
 	public void unequipItem() {
-		//check if player has item equipped
+		if(getPlayer().getHealth() > 20) {
 		System.out.println("You unequipped the item");
+		getPlayer().setHealth(getPlayer().getHealth() - getPlayerRoom().getItems());
+		}
+		
+		else if(getPlayer().getDamage() > 2) {
+			System.out.println("You unequipped the item");
+			getPlayer().setDamage(getPlayer().getDamage() - getPlayerRoom().getItems());
+		}
 	}
 	/*
 	 * Author: Jeremy Stiff This method returns an integer array of connections -1
