@@ -149,6 +149,15 @@ public class DataManagement {
 
     }
     
+    public void heal() {
+    	getPlayerRoom().getItems().forEach(item ->{
+    	if(inv.contains(item)){
+    		System.out.println("You used a potion!");
+    		getPlayer().updateHealth(item.getItemEffect());
+    	}
+    });
+    }
+    
     //Author: Kelan McNally
     public void checkInv() {
     	System.out.println(inv);
