@@ -72,7 +72,7 @@ public class ActionsHandler {
 	}
 
 	public void equipItemHandler() {
-		if (input.startsWith("equip")) {
+		if (input.startsWith("eq") || input.startsWith("equip")) {
 			String[] item_name = input.split("\\s+", 2);
 			if (item_name.length == 2) {
 				model.equipItem(item_name[1]);
@@ -83,7 +83,10 @@ public class ActionsHandler {
 	public void statHandler() {
 		System.out.println("\n=====YOUR STAT=====");
 		System.out.println("Inventory: " + model.getInventory());
-		System.out.println("Equipped with: " + model.getPlayer().getEquippedItem());
+		if (model.getPlayer().getEquippedItem() == null) 
+			System.out.println("Equipted with: Nothing");
+		else
+			System.out.println("Equipped with: " + model.getPlayer().getEquippedItem());
 		System.out.println("Health: " + model.getPlayer().getHealth());
 		System.out.println("Damage Points: " + model.getPlayer().getDamage());
 		System.out.println("=====**=====\n");

@@ -199,7 +199,9 @@ public class DataManagement {
             actions += " i or Item pick or pickup";
         if (getPlayer().getEquippedItem() != null)
         	actions += " u or unqeuip";
-        actions += "st or stat";
+        if (!inventory.isEmpty())
+        	actions += " eq [item] or equip [item]";
+        actions += " st or stat";
 
         return actions;
     }
