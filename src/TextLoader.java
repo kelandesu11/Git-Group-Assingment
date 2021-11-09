@@ -56,19 +56,17 @@ public class TextLoader implements Serializable {
 	private HashMap<Integer, Room> readFile() {
 		map = new HashMap<Integer, Room>();
 
-		while (scanfile.hasNextLine()) {
-			String line = scanfile.nextLine();
-			if (!line.isEmpty()) {
-				Room temp = new Room();
-				temp.setRoomID(Integer.parseInt(line));
-				temp.setRoomName(scanfile.nextLine());
-				temp.setRoomDesc(scanfile.nextLine());
-				temp.setNorth(Integer.parseInt(scanfile.nextLine()));
-				temp.setSouth(Integer.parseInt(scanfile.nextLine()));
-				temp.setEast(Integer.parseInt(scanfile.nextLine()));
-				temp.setWest(Integer.parseInt(scanfile.nextLine()));
-				map.put(temp.getRoomID(), temp);
-			}
+		while (scanfile.hasNext()) {
+			Room temp = new Room();
+			temp.setRoomID(scanfile.nextInt());
+			scanfile.nextLine();
+			temp.setRoomName(scanfile.nextLine());
+			temp.setRoomDesc(scanfile.nextLine());
+			temp.setNorth(scanfile.nextInt());
+			temp.setSouth(scanfile.nextInt());
+			temp.setEast(scanfile.nextInt());
+			temp.setWest(scanfile.nextInt());
+			map.put(temp.getRoomID(), temp);
 		}
 		map.get(1).setVisitedRoom(true);
 
