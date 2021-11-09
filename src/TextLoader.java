@@ -131,8 +131,8 @@ public class TextLoader implements Serializable {
 				monster.setId(Integer.parseInt(line));
 				monster.setName(scanfile.nextLine());
 				monster.setDescription(scanfile.nextLine());
-				monster.setHealth(Double.parseDouble(scanfile.nextLine()));
-				monster.setDamage(Double.parseDouble(scanfile.nextLine()));
+				monster.setHealth(Integer.parseInt(scanfile.nextLine()));
+				monster.setDamage(Integer.parseInt(scanfile.nextLine()));
 				int roomID = Integer.parseInt(scanfile.nextLine());
 				if (map.get(roomID) != null) {
 					map.get(roomID).addMonster(monster);

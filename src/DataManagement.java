@@ -196,10 +196,10 @@ public class DataManagement {
         if (getPlayerRoom().hasPuzzle())
             actions += " p or Puzzle";
         if (getPlayerRoom().hasItem())
-            actions += " i or Item";
-
-        if (actions.equals("Your available actions are:"))
-            actions = "There is nothing to do here.";
+            actions += " i or Item pick or pickup";
+        if (getPlayer().getEquippedItem() != null)
+        	actions += " u or unqeuip";
+        actions += "st or stat";
 
         return actions;
     }
