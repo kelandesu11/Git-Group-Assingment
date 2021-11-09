@@ -53,3 +53,107 @@ A long windowless hallway, to the east is stairs, to the west the hallway narrow
 12
 8
 6
+
+8
+The GrassLand
+This is an open field north of the palace
+3
+13
+9
+7
+
+9
+The Upstairs Bathroom
+Upstairs bathroom, you see hair products and brushes everywhere, the princess must’ve been here.
+4
+14
+10
+8
+
+10
+The Kitchen
+You found the kitchen.
+5
+15
+-1
+9
+
+11
+The Great Hallway
+This is the great hallway, with a long red carpet on the floor and fancy huge lights on the ceiling.
+6
+16
+12
+-1
+
+12
+The Basement
+A basement/storage, quite messy and dark, be careful.
+7
+17
+13
+11
+
+13
+The Movie Room
+A home theater, with an old school film projector.
+8
+18
+14
+12
+
+14
+The Princess's Bedroom
+Princess’s bedroom, a white canopy around the bed, an oversized curtain covering the windows.
+9
+19
+15
+13
+
+15
+The Bathroom
+Another bathroom.
+10
+20
+-1
+14
+
+16
+The Gymnasium
+This is the home gym.
+11
+-1
+17
+-1
+
+17
+The Balcony
+The rooftop, a pool and jacuzzi included.
+12
+-1
+18
+16
+
+18
+The Guest
+The guest bedroom.
+13
+-1
+19
+17
+
+19
+The Garage
+The garage, with a classic Corvette and Porsche 911 parked inside.
+14
+-1
+20
+18
+
+20
+The Loft
+This is the attic, where the Princess has been hiding from the Monsters.
+15
+-1
+-1
+19
