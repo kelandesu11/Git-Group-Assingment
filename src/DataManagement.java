@@ -132,14 +132,6 @@ public class DataManagement {
             }
         });
 
-
-//		if(inv.contains(getPlayerRoom().getItems())) {
-//		System.out.println("You equipped the item!");
-//		getPlayer().setHealth(getPlayer().getHealth() + getPlayerRoom().getItems());
-//		else{
-//		getPlayer().setDamage(getPlayer().getDamage() + getPlayerRoom().getItems());
-//	}
-//	}
     }
 
     //Author: Kelan McNally
@@ -156,7 +148,11 @@ public class DataManagement {
         }
 
     }
-
+    
+    //Author: Kelan McNally
+    public void checkInv() {
+    	System.out.println(inv);
+    }
     /*
      * Author: Jeremy Stiff This method returns an integer array of connections -1
      * is no connection. The order of connections is North, East, South, West.

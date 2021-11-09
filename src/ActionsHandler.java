@@ -66,6 +66,8 @@ public class ActionsHandler {
 			model.equipItem();
 		else if (input.equals("u") || input.equals("unequip"))
 			model.unequipItem();
+		else if (input.equals("inv") || input.equals("inventory"))
+			model.checkInv();
 	}
 
 	// Jeremy Stiff

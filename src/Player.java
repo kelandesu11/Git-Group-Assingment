@@ -43,4 +43,5 @@ public class Player extends Entity implements Serializable {
 	public void setEquippedItem(Items equippedItem) {
 		this.equippedItem = equippedItem;
 	}
+	
 }
