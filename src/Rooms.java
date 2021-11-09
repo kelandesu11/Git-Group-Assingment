@@ -5,11 +5,7 @@ import java.util.ArrayList;
 
 public class Rooms implements Serializable{
 	/**
-<<<<<<< HEAD
 	 * Author: Kelan McNally
-=======
-	 *
->>>>>>> master
 	 */
 	private static final long serialVersionUID = 638851069751677125L;
 	private int roomID = -1;

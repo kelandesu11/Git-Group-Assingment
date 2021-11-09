@@ -51,5 +51,5 @@ The silver greaves of a slain knight which can prove useful to you in your adven
 10
 Gold Coins
 Gold coins can be collected and can be used to progress in the game.
-Used to enter the final room.
+1
 2
