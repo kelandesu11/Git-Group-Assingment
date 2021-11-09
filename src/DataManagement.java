@@ -103,43 +103,37 @@ public class DataManagement {
     //Author: Kelan McNally
     public void pickupItem() {
         // Only can pick up one item at a time.
-        Item firstItem = getPlayerRoom().getItems().get(0);
+        Item firstItem = getPlayerRoom().getItems().remove(0);
         if (firstItem != null) {
             inventory.add(firstItem);
-            System.out.println("You picked up the item!");
+            System.out.println("You picked up: " + firstItem);
         }
 
     }
 
     //Author: Kelan McNally
     public void dropItem() {
-        System.out.println("You dropped the item!");
         Item equippedItem = getPlayer().getEquippedItem();
         if (equippedItem != null) {
             getPlayerRoom().getItems().add(equippedItem);
             equippedItem.setRoomID(getPlayerRoom().getRoomID());
+            System.out.println("You dropped: " + equippedItem);
+            getPlayer().setEquippedItem(null);
+        } else {
+            System.out.println("You need to be equipped before you can drop an item.");
         }
     }
 
     //Author: Kelan McNally
-    public void equipItem() {
-        // TODO this need to pass an item name as the param to equip that one item
-        getPlayerRoom().getItems().forEach(item -> {
-            if (inventory.contains(item)) {
-                System.out.println("You equipped the item!");
-                getPlayer().updateHealth(item.getDamage());
-                getPlayer().updateDamage(item.getDamage()); //TODO: change it to item damage points.
-            }
-        });
-
-
-//		if(inv.contains(getPlayerRoom().getItems())) {
-//		System.out.println("You equipped the item!");
-//		getPlayer().setHealth(getPlayer().getHealth() + getPlayerRoom().getItems());
-//		else{
-//		getPlayer().setDamage(getPlayer().getDamage() + getPlayerRoom().getItems());
-//	}
-//	}
+    public void equipItem(String itemName) {
+        Item inventoryItem = getItemByName(itemName);
+        if (inventoryItem != null) {
+            getPlayer().setEquippedItem(inventoryItem);
+            inventory.remove(inventoryItem);
+            System.out.println("You are equipped with up: " + inventoryItem);
+        } else {
+            System.out.println("There is no such item in the inventory.");
+        }
     }
 
     //Author: Kelan McNally
@@ -147,12 +141,15 @@ public class DataManagement {
         Item equippedItem = getPlayer().getEquippedItem();
         if (equippedItem != null) {
             if (getPlayer().getHealth() > 20) {
-                System.out.println("You unequipped the item");
+                System.out.println("You unequipped: " + equippedItem);
                 getPlayer().decreaseHealth(equippedItem.getDamage());
+
             } else if (getPlayer().getDamage() > 2) {
-                System.out.println("You unequipped the item");
+                System.out.println("You unequipped: " + equippedItem);
                 getPlayer().decreaseDamage(equippedItem.getDamage()); // TODO items needs damage points
             }
+            inventory.add(equippedItem);
+            getPlayer().setEquippedItem(null);
         }
 
     }
@@ -225,6 +222,11 @@ public class DataManagement {
 
     public void setInventory(ArrayList<Item> inventory) {
         this.inventory = inventory;
+    }
+
+    public Item getItemByName(String itemName) {
+        // Return the first item filtered by name or return null
+        return this.inventory.stream().filter(item -> item.getName().equalsIgnoreCase(itemName)).findFirst().orElse(null);
     }
 
     @Override

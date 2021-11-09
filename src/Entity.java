@@ -8,7 +8,8 @@ public class Entity implements Serializable {
 	 */
 	@Serial
 	private static final long serialVersionUID = 2990802055767788458L;
-	private int health, damage;
+	private double health;
+	private double damage;
 
 	public Entity(int health, int damage) {
 		this.health = health;
@@ -19,12 +20,12 @@ public class Entity implements Serializable {
 	}
 
 	//Jeremy Stiff
-	public int getHealth() {
+	public double getHealth() {
 		return health;
 	}
 
 	//Jeremy Stiff
-	public void setHealth(int health) {
+	public void setHealth(double health) {
 		this.health = health;
 	}
 
@@ -37,12 +38,12 @@ public class Entity implements Serializable {
 		this.health -= health;
 	}
 
-	public int getDamage() {
+	public double getDamage() {
 		return damage;
 	}
 
 	//Jeremy Stiff
-	public void setDamage(int damage) {
+	public void setDamage(double damage) {
 		this.damage = damage;
 	}
 

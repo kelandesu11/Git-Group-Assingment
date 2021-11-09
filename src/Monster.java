@@ -54,4 +54,12 @@ public class Monster extends Entity implements Serializable {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Monster{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }
