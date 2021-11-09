@@ -64,7 +64,7 @@ A monster that has double health points but has their attacked halved
 10
 Cow
 A monster that has 1 health point
-0.001
+0
 1
 18
 
