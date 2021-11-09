@@ -1,13 +1,5 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
+import java.io.*;
 import java.util.HashMap;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.Scanner;
 
 /*
@@ -64,24 +56,26 @@ public class TextLoader implements Serializable {
 	private HashMap<Integer, Rooms> readFile() {
 		map = new HashMap<Integer, Rooms>();
 
-		while (scanfile.hasNext()) {
-			Rooms temp = new Rooms();
-			temp.setRoomID(scanfile.nextInt());
-			scanfile.nextLine();
-			temp.setRoomName(scanfile.nextLine());
-			temp.setRoomDesc(scanfile.nextLine());
-			temp.setNorth(scanfile.nextInt());
-			temp.setSouth(scanfile.nextInt());
-			temp.setEast(scanfile.nextInt());
-			temp.setWest(scanfile.nextInt());
-			map.put(temp.getRoomID(), temp);
+		while (scanfile.hasNextLine()) {
+			String line = scanfile.nextLine();
+			if (!line.isEmpty()) {
+				Rooms temp = new Rooms();
+				temp.setRoomID(Integer.parseInt(line));
+				temp.setRoomName(scanfile.nextLine());
+				temp.setRoomDesc(scanfile.nextLine());
+				temp.setNorth(Integer.parseInt(scanfile.nextLine()));
+				temp.setSouth(Integer.parseInt(scanfile.nextLine()));
+				temp.setEast(Integer.parseInt(scanfile.nextLine()));
+				temp.setWest(Integer.parseInt(scanfile.nextLine()));
+				map.put(temp.getRoomID(), temp);
+			}
 		}
 		map.get(1).setVisitedRoom(true);
 
-		
+
 		loadItemFile();
 		readItemFile();
-		
+
 
 		Monsters temp = new Monsters("Test", "This guy sucks", 1, 20, 1);
 		map.get(2).addMonster(temp);
@@ -123,9 +117,10 @@ public class TextLoader implements Serializable {
 			item.setItemDesc(scanfile.nextLine());
 			item.setItemEffect(scanfile.nextInt());
 			item.setItemLocation(scanfile.nextInt());
-			map.get(item.getItemLocation()).addItem(item);
-			
-			
+			if (map.get(item.getItemLocation()) != null) {
+				map.get(item.getItemLocation()).addItem(item);
+			}
+
 		}
 		
 	}
