@@ -20,7 +20,7 @@ public class Storage implements Serializable {
 	private HashMap<Integer, Room> map = new HashMap<Integer, Room>();
 
 	private ArrayList<Item> items = new ArrayList<Item>(); //Author: Kelan McNally
-	private Player player = new Player(20, 2);
+	private Player player = new Player(75, 2);
 
 	//Author: Jeremy Stiff
 	public Room currentRoom() {
@@ -34,7 +34,6 @@ public class Storage implements Serializable {
 	}
 
 
-	//Jeremy Stiff
 
 	// Author: Jeremy Stiff
 	public Player getPlayer() {

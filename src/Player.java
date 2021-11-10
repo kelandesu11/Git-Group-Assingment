@@ -11,6 +11,7 @@ public class Player extends Entity implements Serializable {
 	private int roomID = 1;
 	private int previousRoomID = -1;
 	private Item equippedItem = null;
+	private int gold = 0;
 
 	public Player(int health, int damage) {
 		super(health, damage);
@@ -18,6 +19,16 @@ public class Player extends Entity implements Serializable {
 
 	public int getPlayerLocation() {
 		return roomID;
+	}
+	
+	//Jeremy
+	public void addGold(int gold) {
+		this.gold += gold;
+	}
+	
+	//Jeremy
+	public int getGold() {
+		return gold;
 	}
 
 	public void setPlayerLocation(int room) {

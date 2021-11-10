@@ -87,6 +87,7 @@ public class ActionsHandler {
 			System.out.println("Equipted with: Nothing");
 		else
 			System.out.println("Equipped with: " + model.getPlayer().getEquippedItem());
+		System.out.println("Gold: " + model.getPlayer().getGold());
 		System.out.println("Health: " + model.getPlayer().getHealth());
 		System.out.println("Damage Points: " + model.getPlayer().getDamage());
 		System.out.println("=====**=====\n");
@@ -130,6 +131,8 @@ public class ActionsHandler {
 			}
 			if (combat.getMonsterHealth() <= 0) {
 				model.getPlayerRoom().addMonster(null);
+				System.out.println("The monster drops gold!");
+				model.getPlayer().addGold(20);
 			} else {
 			}
 		}

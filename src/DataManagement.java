@@ -129,6 +129,7 @@ public class DataManagement {
         Item inventoryItem = getItemByName(itemName);
         if (inventoryItem != null) {
             getPlayer().setEquippedItem(inventoryItem);
+            getPlayer().updateDamage(inventoryItem.getDamage());// Jeremy Stiff
             inventory.remove(inventoryItem);
             System.out.println("You are equipped with up: " + inventoryItem);
         } else {
@@ -137,17 +138,11 @@ public class DataManagement {
     }
 
     //Author: Kelan McNally
+    //Edit: Jeremy, finnished functionality
     public void unequipItem() {
         Item equippedItem = getPlayer().getEquippedItem();
         if (equippedItem != null) {
-            if (getPlayer().getHealth() > 20) {
-                System.out.println("You unequipped: " + equippedItem);
-                getPlayer().decreaseHealth(equippedItem.getDamage());
-
-            } else if (getPlayer().getDamage() > 2) {
-                System.out.println("You unequipped: " + equippedItem);
-                getPlayer().decreaseDamage(equippedItem.getDamage()); // TODO items needs damage points
-            }
+            getPlayer().decreaseDamage(equippedItem.getDamage());
             inventory.add(equippedItem);
             getPlayer().setEquippedItem(null);
         }
